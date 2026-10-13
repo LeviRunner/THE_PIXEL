@@ -1,0 +1,53 @@
+# =============================================================================
+# Dungeon Stance — Git LFS e finais de linha
+# Requer: git lfs install (uma vez por máquina)
+# Arquivos binários não fazem merge: use "git lfs lock <arquivo>" antes de
+# editar um .uasset/.umap/.max para que ninguém do grupo edite ao mesmo tempo.
+# =============================================================================
+
+# Texto: normaliza finais de linha
+* text=auto
+*.cpp text eol=lf
+*.h text eol=lf
+*.cs text eol=lf
+*.ini text eol=crlf
+*.md text
+*.ts text eol=lf
+*.gd text eol=lf
+*.ps1 text eol=crlf
+
+# Unreal Engine (binários, travados para edição em grupo)
+*.uasset filter=lfs diff=lfs merge=lfs -text lockable
+*.umap   filter=lfs diff=lfs merge=lfs -text lockable
+
+# 3ds Max e outros arquivos de cena
+*.max filter=lfs diff=lfs merge=lfs -text lockable
+*.skp filter=lfs diff=lfs merge=lfs -text lockable
+*.cdr filter=lfs diff=lfs merge=lfs -text lockable
+*.psd filter=lfs diff=lfs merge=lfs -text lockable
+
+# Malhas e animações exportadas
+*.fbx filter=lfs diff=lfs merge=lfs -text
+*.obj filter=lfs diff=lfs merge=lfs -text
+*.glb filter=lfs diff=lfs merge=lfs -text
+*.gltf filter=lfs diff=lfs merge=lfs -text
+*.abc filter=lfs diff=lfs merge=lfs -text
+
+# Texturas e imagens
+*.png filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text
+*.jpeg filter=lfs diff=lfs merge=lfs -text
+*.tga filter=lfs diff=lfs merge=lfs -text
+*.exr filter=lfs diff=lfs merge=lfs -text
+*.hdr filter=lfs diff=lfs merge=lfs -text
+
+# Áudio e vídeo
+*.wav filter=lfs diff=lfs merge=lfs -text
+*.ogg filter=lfs diff=lfs merge=lfs -text
+*.mp3 filter=lfs diff=lfs merge=lfs -text
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+*.mov filter=lfs diff=lfs merge=lfs -text
+
+# Pacotes
+*.zip filter=lfs diff=lfs merge=lfs -text
+*.7z filter=lfs diff=lfs merge=lfs -text

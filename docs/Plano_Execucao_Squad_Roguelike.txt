@@ -1,0 +1,218 @@
+﻿Documento de Prompt Mestre: Desenvolvimento do Framework Roguelike Multiplayer
+Visão Geral do Prompt
+Copie e cole o conteúdo detalhado abaixo diretamente no Claude Code para inicializar a infraestrutura, sistemas de backend e arquitetura client-side do seu jogo.
+
+
+________________
+
+
+MASTER PROMPT PARA CLAUDE CODE
+Você atuará como Engenheiro Principal de Jogos Multiplayer, especializado em Godot 4 (GDScript) e Heroic Labs Nakama (TypeScript/Go runtime). Sua tarefa é criar a arquitetura de código fundamental para um jogo Squad Roguelike cooperativo top-down.
+
+
+O objetivo deste projeto é construir a estrutura lógica completa (sistemas backend, comunicação de rede, gerenciamento de estado e regras de gameplay), deixando placeholders isolados para arte, áudio e assets visuais.
+
+
+________________
+
+
+1. Objetivo Geral
+Criar um framework modular, performático e escalável utilizando Godot 4 para o cliente de jogo e Nakama como servidor autoritativo backend.
+
+
+* Arquitetura Desacoplada: A lógica de jogo deve rodar independente do rendering. Use componentes de Node genéricos, marcadores Node2D para posições e formas primitivas/Cores (ColorRect, CollisionShape2D padrão) como placeholders.
+* Backend Autoritativo: Toda validação crítica (progressão, inventário, matchmaking e persistência) deve ser processada no Nakama via TypeScript/Go RPCs.
+
+
+________________
+
+
+2. Classes de Personagens
+O sistema deve suportar 7 classes base inspiradas na mecânica de Diablo Immortal, codificadas como recursos data-driven (Resource no Godot e definições JSON no Nakama):
+
+
+Classe
+	Papel Principal
+	Mecânica Base / Recurso
+	Bárbaro
+	Melee / Tank
+	Geração de Fúria ao tomar e causar dano. Ataques em área de curto alcance.
+	Cruzado
+	Tank / Buff
+	Escudos de absorção de dano e auras de suporte para o esquadrão.
+	Caçador de Demônios
+	Ranged DPS
+	Ataques à distância baseados em Velocidade de Ataque e Mobilidade/Esquiva.
+	Monge
+	Melee / Utility
+	Combos em sequência rápida e escudos de mobilidade para curar/proteger aliados.
+	Necromante
+	Summoner / DoT
+	Invocação de lacaios autônomos e maldições de dano contínuo em área.
+	Arcanista
+	Ranged AoE
+	Gerenciamento de Mana para magias de controle de grupo e alto dano elemental.
+	Cavaleiro Sangrento
+	Hybrid Lifesteal
+	Controle de alcance médio e drenagem de vida para sustentação em combate.
+	Requisitos Técnicos de Classes:
+* Crie uma classe base PlayerClassData estendendo Resource no Godot.
+* Implemente um sistema de atributos dinâmico: BaseHealth, BaseDamage, MoveSpeed, ResourceMax e CooldownReduction.
+
+
+________________
+
+
+3. Progressão Permanente (Backend Nakama)
+A progressão do jogador é salva de forma persistente na coleção Storage do Nakama por conta de usuário, individualizada por classe.Storage Collection: "player_progression"
+
+
+Key: "<class_id>" (ex: "necromancer", "barbarian")
+
+
+Data Payload: {
+
+
+  "class_id": "necromancer",
+
+
+  "rank": 14,
+
+
+  "xp": 4500,
+
+
+  "unlocked_runes": ["skeleton_mastery_1", "decay_aura_2"],
+
+
+  "stats_multiplier": { "health": 1.12, "damage": 1.08 }
+
+
+}
+Exemplo de Aplicação de Runa (Necromante):
+Se o jogador desbloqueou a runa "skeleton_mastery_1", a função RPC de carregamento no Nakama deve retornar essa modificação. O cliente Godot aplicará um modificador à entidade sumonada (ex: SummonNode), aumentando o dano dos esqueletos em 15% e o limite de invocações de 3 para 4.
+
+
+________________
+
+
+4. Sistema de Matchmaking
+O matchmaking deve garantir partidas equilibradas com base no Rank da Classe Atualmente Selecionada, ignorando o nível geral ou global da conta.
+
+
+* Regra de Match: Um jogador usando um Bárbaro Rank 50 não deve ser pareado na mesma fila contra/com um Necromante Rank 2 do mesmo jogador ou de terceiros.
+* Algoritmo de Fila (Nakama Matchmaker):
+   * O payload da solicitação de matchmaking deve enviar a propriedade selected_class e class_rank.
+   * O filtro de busca deve buscar jogadores dentro de uma margem de tolerância de Rank ($\pm 3$ ranks iniciais, expandindo a cada 5 segundos de espera).
+   * Tamanho do Esquadrão: 4 jogadores.
+
+
+________________
+
+
+5. Árvores de Habilidades em Partida (Roguelike)
+Antes do início de uma partida, o jogador escolhe uma Árvore Compartilhada de Habilidades (Global Skill Tree) que dita o pool de cartas de melhoria durante a run:
+
+
+1. Caminho do Crítico: Foco em chance crítica, dano crítico e efeitos ao aplicar crítico.
+2. Caminho do Dano Mágico: Foco em amplificação elemental, redução de cooldown e recuperação de recurso.
+3. Caminho da Defesa: Foco em armadura, regeneração de vida, escudos e resistência a controle.
+Mecânica In-Game (Level Up):
+* Quando a equipe/jogador acumula XP durante a partida e sobe de nível, o jogo sorteia 3 Cartas Aleatórias tiradas exclusivamente do pool da Árvore de Habilidades selecionada antes do jogo.
+* O status temporário da run é mantido em uma estrutura de memória da partida no Godot (MatchStatsManager).
+
+
+________________
+
+
+6. Fluxo do Jogo (State Machine)
+Crie um gerenciador de estados global (GameStateManager) para coordenar as transições:
+
+
+1. Lobby: Conexão com o Nakama, carregamento do perfil do usuário e dados persitentes.
+2. Seleção de Classe: Jogador escolhe a classe desejada (ex: Necromante). O cliente busca no Nakama os dados específicos da classe (Rank, Runas).
+3. Seleção de Árvore: Escolha do deck de habilidades temporárias (ex: Caminho do Crítico).
+4. Matchmaking: Ingressar na fila do Nakama com o parâmetro de Rank da classe selecionada.
+5. Gameplay: Instanciação da partida multiplayer autoritativa via Nakama Match / Godot High-Level Multiplayer. Aplicação dos buffs locais/globais.
+6. Save Results / Tela de Vitória/Derrota: Ao final da partida, o servidor Nakama calcula a experiência adquirida e atualiza a persistência do Rank da classe usada.
+
+
+________________
+
+
+7. Instruções Técnicas para o Claude Code
+Execute a criação dos arquivos de código seguindo estritamente a estrutura abaixo. Mantenha os scripts totalmente desacoplados de arte ou arquivos binários.
+Estrutura do Projeto a ser Gerada:
+/project-root
+
+
+├── godot/
+
+
+│   ├── scripts/
+
+
+│   │   ├── autoload/
+
+
+│   │   │   ├── NetworkManager.gd       # Conexão e eventos Nakama
+
+
+│   │   │   └── GameStateManager.gd     # Gerenciamento do fluxo de telas/estados
+
+
+│   │   ├── resources/
+
+
+│   │   │   ├── PlayerClassData.gd      # Resource base para definição de classes
+
+
+│   │   │   └── SkillCardData.gd        # Resource base para cartas roguelike
+
+
+│   │   ├── entities/
+
+
+│   │   │   ├── BasePlayer.gd           # Controlado por entrada/rede (Node2D + Placeholder)
+
+
+│   │   │   └── BaseSummon.gd           # Ex: Esqueletos do Necromante
+
+
+│   │   └── ui/
+
+
+│   │       ├── MatchmakingUI.gd        # Interface visual temporária de busca
+
+
+│   │       └── CardSelectionUI.gd      # Display das 3 cartas ao subir de nível
+
+
+├── nakama/
+
+
+│   ├── src/
+
+
+│   │   ├── main.ts                     # Ponto de entrada do servidor Nakama
+
+
+│   │   ├── progression.ts              # Handlers RPC para salvar/carregar progresso
+
+
+│   │   └── matchmaker.ts               # Lógica personalizada de fila por Class Rank
+Comandos de Implementação:
+1. Crie o arquivo NetworkManager.gd:
+   * Gerencie a inicialização do NakamaClient, NakamaSession e NakamaSocket.
+   * Adicione funções para join_matchmaker(class_id: String, class_rank: int) e rpc_fetch_class_data(class_id: String).
+2. Crie os scripts TypeScript do Nakama:
+   * Em progression.ts, crie o RPC RpcLoadClassProgression para ler do Storage player_progression.
+   * Em matchmaker.ts, implemente a função de validação do Matchmaker Matched Hook garantindo o alinhamento de Ranks por classe.
+3. Crie o sistema de Entities em GDScript:
+   * Implemente em BasePlayer.gd o recebimento dos dados da classe e a aplicação dos multiplicadores de runas vindos do Nakama.
+   * Crie visualização via código usando draw_circle ou componentes de ColorRect como marcadores visuais.
+4. Crie o Gerenciador de Cartas de Habilidade (CardSelectionUI.gd):
+   * Implemente o método de sorteio ponderado (RNG) de 3 cartas baseado na árvore escolhida (Caminho do Crítico, Dano Mágico, ou Defesa).
+
+
+Por favor, comece gerando os scripts centrais do backend Nakama e, em seguida, passe para os Autoloads e Controllers do Godot 4.

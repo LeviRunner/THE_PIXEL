@@ -1,0 +1,102 @@
+# =============================================================================
+# Dungeon Stance — .gitignore
+# Sobe para o GitHub: README, GUIA_EQUIPE, docs/, Source/, Config/, Content/,
+# *.uproject, _Export_3dsMax_Final/, tools/ e o launcher do build.
+# NÃO sobem: arts/ (grande demais) e os protótipos legados
+# (Godot_Legacy_Reference/, Nakama_Legacy_Reference/) — ficam só nas máquinas
+# locais / drive compartilhado. Binários grandes vão pelo Git LFS
+# (ver .gitattributes). Nunca suba nada gerado, pessoal ou com segredo.
+# =============================================================================
+
+# ---------------------------------------------------------------------------
+# Unreal Engine 5 — gerado pela engine/compilador (recriado em cada máquina)
+# ---------------------------------------------------------------------------
+Binaries/
+Intermediate/
+Saved/
+DerivedDataCache/
+Build/Windows/
+Build/Linux/
+Build/Mac/
+Plugins/**/Binaries/
+Plugins/**/Intermediate/
+# Projetos de IDE gerados por "Generate Visual Studio project files"
+*.sln
+*.suo
+*.sdf
+*.VC.db
+*.VC.opendb
+*.opensdf
+.vs/
+.vscode/
+.idea/
+*.xcodeproj
+*.xcworkspace
+# Cache de shaders e dados de DDC compartilhado local
+*.ddc
+*.pdb
+*.ilk
+*.exp
+*.lib
+*.dll
+*.exe
+*.app
+*.ipa
+*.apk
+*.pak
+*.ucas
+*.utoc
+# Pasta de testes pessoais de cada desenvolvedor no editor
+Content/Developers/
+
+# ---------------------------------------------------------------------------
+# 3ds Max / arte — arquivos temporários, backups e autosaves
+# ---------------------------------------------------------------------------
+# Concepts e trabalho em andamento: grande demais para o repositório
+arts/
+*_autoback*.max
+*.max.bak
+*.skb
+*.blend1
+*.tmp
+Thumbs.db
+desktop.ini
+
+# ---------------------------------------------------------------------------
+# Protótipo legado
+# ---------------------------------------------------------------------------
+# Build jogável do Godot: o runtime (exe) e o pacote (pck) são gerados por tools/build.ps1
+build/*.exe
+build/*.pck
+# Código do protótipo Godot + Nakama: só para consulta local, não vai para o repositório
+Godot_Legacy_Reference/
+Nakama_Legacy_Reference/
+
+# ---------------------------------------------------------------------------
+# Ferramentas (Python / Node)
+# ---------------------------------------------------------------------------
+__pycache__/
+*.pyc
+.venv/
+venv/
+node_modules/
+npm-debug.log*
+
+# ---------------------------------------------------------------------------
+# Segredos e configurações pessoais — NUNCA subir
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+Config/*User*.ini
+Saved/Config/
+
+# ---------------------------------------------------------------------------
+# Sistema operacional / editores
+# ---------------------------------------------------------------------------
+.DS_Store
+*.swp
+*~
+.claude/settings.local.json
