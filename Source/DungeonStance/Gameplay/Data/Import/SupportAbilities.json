@@ -1,0 +1,98 @@
+[
+  {
+    "id": "lost_warrior_aura",
+    "name": "Aura do Guerreiro Perdido",
+    "kind": "damage_buff",
+    "cooldown": 20,
+    "radius_cm": 700,
+    "duration": 6,
+    "magnitude": 0.3,
+    "dr": 0,
+    "is_heal": false,
+    "taunts": false
+  },
+  {
+    "id": "shared_bastion",
+    "name": "Bastião Compartilhado",
+    "kind": "shield",
+    "cooldown": 16,
+    "radius_cm": 600,
+    "duration": 6,
+    "magnitude": 160,
+    "dr": 0,
+    "is_heal": false,
+    "taunts": false
+  },
+  {
+    "id": "rallying_pulse",
+    "name": "Pulso Revigorante",
+    "kind": "heal",
+    "cooldown": 14,
+    "radius_cm": 650,
+    "duration": 0,
+    "magnitude": 0.18,
+    "dr": 0,
+    "is_heal": true,
+    "taunts": false
+  },
+  {
+    "id": "battle_cry",
+    "name": "Grito de Batalha",
+    "kind": "haste",
+    "cooldown": 18,
+    "radius_cm": 650,
+    "duration": 6,
+    "magnitude": 0.25,
+    "dr": 0,
+    "is_heal": false,
+    "taunts": false
+  },
+  {
+    "id": "war_banner",
+    "name": "Estandarte de Guerra",
+    "kind": "zone",
+    "cooldown": 24,
+    "radius_cm": 500,
+    "duration": 10,
+    "magnitude": 0.15,
+    "dr": 0,
+    "is_heal": false,
+    "taunts": false
+  },
+  {
+    "id": "sanctuary",
+    "name": "Santuário",
+    "kind": "zone",
+    "cooldown": 30,
+    "radius_cm": 400,
+    "duration": 5,
+    "magnitude": 0.05,
+    "dr": 0.3,
+    "is_heal": true,
+    "taunts": false
+  },
+  {
+    "id": "ward_totem",
+    "name": "Totem Guardião",
+    "kind": "zone",
+    "cooldown": 26,
+    "radius_cm": 400,
+    "duration": 12,
+    "magnitude": 0.2,
+    "dr": 0,
+    "is_heal": false,
+    "taunts": true
+  },
+  {
+    "id": "tactical_call",
+    "name": "Chamado Tático",
+    "kind": "rally",
+    "cooldown": 20,
+    "radius_cm": 650,
+    "duration": 4,
+    "magnitude": 0.3,
+    "dr": 0,
+    "is_heal": false,
+    "taunts": false
+  }
+]

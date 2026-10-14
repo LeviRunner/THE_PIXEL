@@ -1,0 +1,4874 @@
+[
+  {
+    "Name": "keen_eye",
+    "CardId": "keen_eye",
+    "DisplayName": "Olho Afiado",
+    "Description": "+5% chance crítica.",
+    "Stance": "Critical",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 5,
+    "Branch": 0,
+    "Tier": 1,
+    "Parents": [],
+    "Modifiers": [
+      {
+        "Stat": "crit_chance",
+        "Op": "Add",
+        "Value": 0.05
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "lethal_precision",
+    "CardId": "lethal_precision",
+    "DisplayName": "Precisão Letal",
+    "Description": "+8% chance crítica e +5% dano.",
+    "Stance": "Critical",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 0,
+    "Tier": 2,
+    "Parents": [
+      "keen_eye"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "crit_chance",
+        "Op": "Add",
+        "Value": 0.08
+      },
+      {
+        "Stat": "damage",
+        "Op": "Mult",
+        "Value": 1.05
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "steady_hand",
+    "CardId": "steady_hand",
+    "DisplayName": "Mão Firme",
+    "Description": "+3% chance crítica; +6% extra contra alvos acima de 80% de vida.",
+    "Stance": "Critical",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 4,
+    "Branch": 0,
+    "Tier": 3,
+    "Parents": [
+      "lethal_precision"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "crit_chance",
+        "Op": "Add",
+        "Value": 0.03
+      },
+      {
+        "Stat": "crit_chance_high_hp",
+        "Op": "Add",
+        "Value": 0.06
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "weak_spot",
+    "CardId": "weak_spot",
+    "DisplayName": "Ponto Fraco",
+    "Description": "Críticos marcam o alvo por 4 s: ele recebe +6% de dano de todo o esquadrão.",
+    "Stance": "Critical",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 0,
+    "Tier": 4,
+    "Parents": [
+      "steady_hand",
+      "blood_scent"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "crit_mark_vuln",
+        "Op": "Add",
+        "Value": 0.06
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "hunters_patience",
+    "CardId": "hunters_patience",
+    "DisplayName": "Paciência do Caçador",
+    "Description": "+2% chance crítica por segundo sem critar (máx. +10%); zera ao critar.",
+    "Stance": "Critical",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 3,
+    "Branch": 0,
+    "Tier": 5,
+    "Parents": [
+      "weak_spot"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "crit_patience",
+        "Op": "Add",
+        "Value": 0.02
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "surgical_cut",
+    "CardId": "surgical_cut",
+    "DisplayName": "Corte Cirúrgico",
+    "Description": "+6% chance crítica; +20% dano crítico contra alvos marcados.",
+    "Stance": "Critical",
+    "Rarity": "Epic",
+    "Weight": 2,
+    "MaxStacks": 2,
+    "Branch": 0,
+    "Tier": 6,
+    "Parents": [
+      "hunters_patience"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "crit_chance",
+        "Op": "Add",
+        "Value": 0.06
+      },
+      {
+        "Stat": "crit_damage_vs_marked",
+        "Op": "Add",
+        "Value": 0.2
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "trained_eye",
+    "CardId": "trained_eye",
+    "DisplayName": "Olho Treinado",
+    "Description": "+4% chance crítica; +40 de alcance (só ataques à distância).",
+    "Stance": "Critical",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 4,
+    "Branch": 0,
+    "Tier": 7,
+    "Parents": [
+      "surgical_cut"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "crit_chance",
+        "Op": "Add",
+        "Value": 0.04
+      },
+      {
+        "Stat": "ranged_attack_range",
+        "Op": "Add",
+        "Value": 40
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "fatal_angle",
+    "CardId": "fatal_angle",
+    "DisplayName": "Ângulo Fatal",
+    "Description": "+15% chance crítica em ataques fora do cone frontal de 90° do inimigo.",
+    "Stance": "Critical",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 0,
+    "Tier": 8,
+    "Parents": [
+      "trained_eye",
+      "scab"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "crit_chance_flank",
+        "Op": "Add",
+        "Value": 0.15
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "perfect_focus",
+    "CardId": "perfect_focus",
+    "DisplayName": "Foco Perfeito",
+    "Description": "A cada 8 s, o próximo ataque é crítico garantido.",
+    "Stance": "Critical",
+    "Rarity": "Epic",
+    "Weight": 2,
+    "MaxStacks": 1,
+    "Branch": 0,
+    "Tier": 9,
+    "Parents": [
+      "fatal_angle"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "crit_focus_interval",
+        "Op": "Add",
+        "Value": 8
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "calculated_risk",
+    "CardId": "calculated_risk",
+    "DisplayName": "Risco Calculado",
+    "Description": "+1% chance crítica a cada 10% de vida perdida (máx. +9%).",
+    "Stance": "Critical",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 0,
+    "Tier": 10,
+    "Parents": [
+      "perfect_focus"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "crit_chance_missing_hp",
+        "Op": "Add",
+        "Value": 0.01
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "thousand_cuts",
+    "CardId": "thousand_cuts",
+    "DisplayName": "Mil Cortes",
+    "Description": "Críticos seguidos no mesmo alvo: +3% chance crítica (acumula 5×, 3 s).",
+    "Stance": "Critical",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 0,
+    "Tier": 11,
+    "Parents": [
+      "calculated_risk"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "crit_chain_bonus",
+        "Op": "Add",
+        "Value": 0.03
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "eye_of_the_storm",
+    "CardId": "eye_of_the_storm",
+    "DisplayName": "Olho da Tempestade",
+    "Description": "+10% chance crítica; chance acima de 60% vira dano crítico (cada 1% = +2% dano crítico).",
+    "Stance": "Critical",
+    "Rarity": "Epic",
+    "Weight": 1,
+    "MaxStacks": 1,
+    "Branch": 0,
+    "Tier": 12,
+    "Parents": [
+      "thousand_cuts",
+      "blood_tithe"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "crit_chance",
+        "Op": "Add",
+        "Value": 0.1
+      },
+      {
+        "Stat": "crit_overflow",
+        "Op": "Add",
+        "Value": 2
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "blood_drop",
+    "CardId": "blood_drop",
+    "DisplayName": "Gota Rubra",
+    "Description": "+1% roubo de vida.",
+    "Stance": "Critical",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 5,
+    "Branch": 1,
+    "Tier": 1,
+    "Parents": [],
+    "Modifiers": [
+      {
+        "Stat": "lifesteal",
+        "Op": "Add",
+        "Value": 0.01
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "critical_thirst",
+    "CardId": "critical_thirst",
+    "DisplayName": "Sede Crítica",
+    "Description": "Críticos curam 2% da vida máxima.",
+    "Stance": "Critical",
+    "Rarity": "Rare",
+    "Weight": 4,
+    "MaxStacks": 2,
+    "Branch": 1,
+    "Tier": 2,
+    "Parents": [
+      "keen_eye",
+      "blood_drop"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "crit_heal_pct",
+        "Op": "Add",
+        "Value": 0.02
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "blood_scent",
+    "CardId": "blood_scent",
+    "DisplayName": "Faro de Sangue",
+    "Description": "+8% chance crítica contra alvos abaixo de 50% de vida.",
+    "Stance": "Critical",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 1,
+    "Tier": 3,
+    "Parents": [
+      "critical_thirst"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "crit_chance_low_hp",
+        "Op": "Add",
+        "Value": 0.08
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "open_wound",
+    "CardId": "open_wound",
+    "DisplayName": "Ferida Aberta",
+    "Description": "Críticos causam sangramento: 20% do dano do golpe em 3 s.",
+    "Stance": "Critical",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 1,
+    "Tier": 4,
+    "Parents": [
+      "blood_scent",
+      "bone_breaker"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "crit_bleed_pct",
+        "Op": "Add",
+        "Value": 0.2
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "crimson_pact",
+    "CardId": "crimson_pact",
+    "DisplayName": "Pacto Carmim",
+    "Description": "+4% vida máxima; críticos geram +2 de recurso.",
+    "Stance": "Critical",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 3,
+    "Branch": 1,
+    "Tier": 5,
+    "Parents": [
+      "open_wound"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "max_health",
+        "Op": "Mult",
+        "Value": 1.04
+      },
+      {
+        "Stat": "crit_resource_gain",
+        "Op": "Add",
+        "Value": 2
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "vampiric_edge",
+    "CardId": "vampiric_edge",
+    "DisplayName": "Fio Vampírico",
+    "Description": "Críticos curam +1,5% da vida máxima; +3% roubo de vida.",
+    "Stance": "Critical",
+    "Rarity": "Epic",
+    "Weight": 2,
+    "MaxStacks": 2,
+    "Branch": 1,
+    "Tier": 6,
+    "Parents": [
+      "crimson_pact"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "crit_heal_pct",
+        "Op": "Add",
+        "Value": 0.015
+      },
+      {
+        "Stat": "lifesteal",
+        "Op": "Add",
+        "Value": 0.03
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "scab",
+    "CardId": "scab",
+    "DisplayName": "Casca de Ferida",
+    "Description": "Curas por crítico dão escudo de 50% do valor (teto 8% da vida máx.).",
+    "Stance": "Critical",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 3,
+    "Branch": 1,
+    "Tier": 7,
+    "Parents": [
+      "vampiric_edge"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "crit_heal_shield",
+        "Op": "Add",
+        "Value": 0.5
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "feast",
+    "CardId": "feast",
+    "DisplayName": "Banquete",
+    "Description": "Matar com crítico cura 4% da vida máxima.",
+    "Stance": "Critical",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 1,
+    "Tier": 8,
+    "Parents": [
+      "scab",
+      "savage_momentum"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "crit_kill_heal",
+        "Op": "Add",
+        "Value": 0.04
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "crimson_frenzy",
+    "CardId": "crimson_frenzy",
+    "DisplayName": "Frenesi Carmim",
+    "Description": "Abaixo de 35% de vida: +20% chance crítica e +20% roubo de vida.",
+    "Stance": "Critical",
+    "Rarity": "Epic",
+    "Weight": 2,
+    "MaxStacks": 1,
+    "Branch": 1,
+    "Tier": 9,
+    "Parents": [
+      "feast"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "low_hp_frenzy",
+        "Op": "Add",
+        "Value": 0.2
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "hemorrhage",
+    "CardId": "hemorrhage",
+    "DisplayName": "Hemorragia",
+    "Description": "Sangramento dura +2 s e acumula +1× (até 3×).",
+    "Stance": "Critical",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 1,
+    "Tier": 10,
+    "Parents": [
+      "crimson_frenzy"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "bleed_extra_sec",
+        "Op": "Add",
+        "Value": 2
+      },
+      {
+        "Stat": "bleed_max_stacks",
+        "Op": "Add",
+        "Value": 1
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "blood_tithe",
+    "CardId": "blood_tithe",
+    "DisplayName": "Dízimo de Sangue",
+    "Description": "25% da cura excedente vai para o aliado mais ferido a até 8 m.",
+    "Stance": "Critical",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 2,
+    "Branch": 1,
+    "Tier": 11,
+    "Parents": [
+      "hemorrhage"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "overheal_share",
+        "Op": "Add",
+        "Value": 0.25
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "red_sovereign",
+    "CardId": "red_sovereign",
+    "DisplayName": "Soberano Rubro",
+    "Description": "Críticos curam o esquadrão em 1% da vida máx. de cada um (máx. 1×/0,5 s); +5% roubo de vida.",
+    "Stance": "Critical",
+    "Rarity": "Epic",
+    "Weight": 1,
+    "MaxStacks": 1,
+    "Branch": 1,
+    "Tier": 12,
+    "Parents": [
+      "blood_tithe",
+      "annihilation"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "crit_squad_heal",
+        "Op": "Add",
+        "Value": 0.01
+      },
+      {
+        "Stat": "lifesteal",
+        "Op": "Add",
+        "Value": 0.05
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "brutal_strike",
+    "CardId": "brutal_strike",
+    "DisplayName": "Golpe Brutal",
+    "Description": "+25% dano crítico.",
+    "Stance": "Critical",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 5,
+    "Branch": 2,
+    "Tier": 1,
+    "Parents": [],
+    "Modifiers": [
+      {
+        "Stat": "crit_damage",
+        "Op": "Add",
+        "Value": 0.25
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "heavy_hand",
+    "CardId": "heavy_hand",
+    "DisplayName": "Mão Pesada",
+    "Description": "+15% dano crítico e +3% dano.",
+    "Stance": "Critical",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 4,
+    "Branch": 2,
+    "Tier": 2,
+    "Parents": [
+      "brutal_strike"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "crit_damage",
+        "Op": "Add",
+        "Value": 0.15
+      },
+      {
+        "Stat": "damage",
+        "Op": "Mult",
+        "Value": 1.03
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "bone_breaker",
+    "CardId": "bone_breaker",
+    "DisplayName": "Quebra-Ossos",
+    "Description": "Críticos atordoam inimigos comuns por 0,3 s (1× a cada 4 s por alvo).",
+    "Stance": "Critical",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 2,
+    "Tier": 3,
+    "Parents": [
+      "heavy_hand"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "crit_stun_sec",
+        "Op": "Add",
+        "Value": 0.3
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "deep_cut",
+    "CardId": "deep_cut",
+    "DisplayName": "Corte Profundo",
+    "Description": "+30% dano crítico contra alvos sangrando.",
+    "Stance": "Critical",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 2,
+    "Tier": 4,
+    "Parents": [
+      "bone_breaker",
+      "adrenaline"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "crit_damage_vs_bleeding",
+        "Op": "Add",
+        "Value": 0.3
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "overkill",
+    "CardId": "overkill",
+    "DisplayName": "Exagero",
+    "Description": "50% do dano crítico excedente de um abate passa ao inimigo mais próximo.",
+    "Stance": "Critical",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 3,
+    "Branch": 2,
+    "Tier": 5,
+    "Parents": [
+      "deep_cut"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "overkill_transfer",
+        "Op": "Add",
+        "Value": 0.5
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "executioner",
+    "CardId": "executioner",
+    "DisplayName": "Executor",
+    "Description": "+75% dano crítico e +5% chance crítica.",
+    "Stance": "Critical",
+    "Rarity": "Epic",
+    "Weight": 2,
+    "MaxStacks": 1,
+    "Branch": 2,
+    "Tier": 6,
+    "Parents": [
+      "overkill"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "crit_damage",
+        "Op": "Add",
+        "Value": 0.75
+      },
+      {
+        "Stat": "crit_chance",
+        "Op": "Add",
+        "Value": 0.05
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "savage_momentum",
+    "CardId": "savage_momentum",
+    "DisplayName": "Ímpeto Selvagem",
+    "Description": "+10% dano crítico; +5% movimento por 2 s após critar.",
+    "Stance": "Critical",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 4,
+    "Branch": 2,
+    "Tier": 7,
+    "Parents": [
+      "executioner"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "crit_damage",
+        "Op": "Add",
+        "Value": 0.1
+      },
+      {
+        "Stat": "crit_move_speed",
+        "Op": "Add",
+        "Value": 0.05
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "giant_slayer",
+    "CardId": "giant_slayer",
+    "DisplayName": "Matador de Gigantes",
+    "Description": "+12% dano e +20% dano crítico contra brutamontes, elites e chefes.",
+    "Stance": "Critical",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 2,
+    "Tier": 8,
+    "Parents": [
+      "savage_momentum",
+      "hunters_cadence"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "elite_damage",
+        "Op": "Add",
+        "Value": 0.12
+      },
+      {
+        "Stat": "elite_crit_damage",
+        "Op": "Add",
+        "Value": 0.2
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "shatter",
+    "CardId": "shatter",
+    "DisplayName": "Estilhaçar",
+    "Description": "Críticos da skill explodem: 25% do dano em 2 m.",
+    "Stance": "Critical",
+    "Rarity": "Epic",
+    "Weight": 2,
+    "MaxStacks": 1,
+    "Branch": 2,
+    "Tier": 9,
+    "Parents": [
+      "giant_slayer"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "skill_crit_explode",
+        "Op": "Add",
+        "Value": 0.25
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "cruelty",
+    "CardId": "cruelty",
+    "DisplayName": "Crueldade",
+    "Description": "+6% dano crítico por inimigo a até 5 m (máx. 5).",
+    "Stance": "Critical",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 2,
+    "Tier": 10,
+    "Parents": [
+      "shatter"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "crit_damage_per_nearby",
+        "Op": "Add",
+        "Value": 0.06
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "annihilation",
+    "CardId": "annihilation",
+    "DisplayName": "Aniquilação",
+    "Description": "+25% dano crítico, −3% chance crítica (troca deliberada).",
+    "Stance": "Critical",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 2,
+    "Tier": 11,
+    "Parents": [
+      "cruelty"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "crit_damage",
+        "Op": "Add",
+        "Value": 0.25
+      },
+      {
+        "Stat": "crit_chance",
+        "Op": "Add",
+        "Value": -0.03
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "world_ender",
+    "CardId": "world_ender",
+    "DisplayName": "Fim dos Mundos",
+    "Description": "Dano crítico da skill ×1,5; críticos da skill derrubam comuns por 0,5 s.",
+    "Stance": "Critical",
+    "Rarity": "Epic",
+    "Weight": 1,
+    "MaxStacks": 1,
+    "Branch": 2,
+    "Tier": 12,
+    "Parents": [
+      "annihilation",
+      "perpetual_motion"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "skill_crit_damage_mult",
+        "Op": "Mult",
+        "Value": 1.5
+      },
+      {
+        "Stat": "skill_crit_stun_sec",
+        "Op": "Add",
+        "Value": 0.5
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "quick_reflexes",
+    "CardId": "quick_reflexes",
+    "DisplayName": "Reflexos Rápidos",
+    "Description": "+4% velocidade de ataque.",
+    "Stance": "Critical",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 5,
+    "Branch": 3,
+    "Tier": 1,
+    "Parents": [],
+    "Modifiers": [
+      {
+        "Stat": "attack_speed",
+        "Op": "Mult",
+        "Value": 1.04
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "relentless_rhythm",
+    "CardId": "relentless_rhythm",
+    "DisplayName": "Ritmo Implacável",
+    "Description": "Críticos reduzem a recarga da skill em 0,3 s.",
+    "Stance": "Critical",
+    "Rarity": "Rare",
+    "Weight": 4,
+    "MaxStacks": 3,
+    "Branch": 3,
+    "Tier": 2,
+    "Parents": [
+      "quick_reflexes",
+      "brutal_strike"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "crit_cooldown_refund",
+        "Op": "Add",
+        "Value": 0.3
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "adrenaline",
+    "CardId": "adrenaline",
+    "DisplayName": "Adrenalina",
+    "Description": "Críticos: +3% velocidade de ataque por 3 s (acumula 5×).",
+    "Stance": "Critical",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 4,
+    "Branch": 3,
+    "Tier": 3,
+    "Parents": [
+      "relentless_rhythm"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "crit_attack_speed",
+        "Op": "Add",
+        "Value": 0.03
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "dancing_blade",
+    "CardId": "dancing_blade",
+    "DisplayName": "Lâmina Dançante",
+    "Description": "Críticos reduzem a recarga da esquiva em 0,15 s.",
+    "Stance": "Critical",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 3,
+    "Tier": 4,
+    "Parents": [
+      "adrenaline",
+      "heavy_hand"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "crit_dodge_refund",
+        "Op": "Add",
+        "Value": 0.15
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "tempo",
+    "CardId": "tempo",
+    "DisplayName": "Compasso",
+    "Description": "+6% redução de recarga da skill.",
+    "Stance": "Critical",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 3,
+    "Branch": 3,
+    "Tier": 5,
+    "Parents": [
+      "dancing_blade"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "cooldown_reduction",
+        "Op": "Add",
+        "Value": 0.06
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "flurry",
+    "CardId": "flurry",
+    "DisplayName": "Saraivada",
+    "Description": "10% de chance de um crítico se repetir com 50% do dano.",
+    "Stance": "Critical",
+    "Rarity": "Epic",
+    "Weight": 2,
+    "MaxStacks": 2,
+    "Branch": 3,
+    "Tier": 6,
+    "Parents": [
+      "tempo"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "crit_repeat_chance",
+        "Op": "Add",
+        "Value": 0.1
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "hunters_cadence",
+    "CardId": "hunters_cadence",
+    "DisplayName": "Cadência do Caçador",
+    "Description": "+5% velocidade de ataque e +3% chance crítica.",
+    "Stance": "Critical",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 4,
+    "Branch": 3,
+    "Tier": 7,
+    "Parents": [
+      "flurry"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "attack_speed",
+        "Op": "Mult",
+        "Value": 1.05
+      },
+      {
+        "Stat": "crit_chance",
+        "Op": "Add",
+        "Value": 0.03
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "chain_reaction",
+    "CardId": "chain_reaction",
+    "DisplayName": "Reação em Cadeia",
+    "Description": "Abate com crítico reduz as recargas da skill e da esquiva em 0,5 s.",
+    "Stance": "Critical",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 3,
+    "Tier": 8,
+    "Parents": [
+      "hunters_cadence",
+      "savage_momentum"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "crit_kill_cdr",
+        "Op": "Add",
+        "Value": 0.5
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "bullet_time",
+    "CardId": "bullet_time",
+    "DisplayName": "Instante Eterno",
+    "Description": "10 críticos em 4 s: +30% vel. de ataque e movimento por 3 s (recarga 15 s).",
+    "Stance": "Critical",
+    "Rarity": "Epic",
+    "Weight": 2,
+    "MaxStacks": 1,
+    "Branch": 3,
+    "Tier": 9,
+    "Parents": [
+      "chain_reaction"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "bullet_time",
+        "Op": "Add",
+        "Value": 0.3
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "resource_echo",
+    "CardId": "resource_echo",
+    "DisplayName": "Eco do Recurso",
+    "Description": "Críticos devolvem 1,5% do recurso máximo.",
+    "Stance": "Critical",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 3,
+    "Tier": 10,
+    "Parents": [
+      "bullet_time"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "crit_resource_refund",
+        "Op": "Add",
+        "Value": 0.015
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "perpetual_motion",
+    "CardId": "perpetual_motion",
+    "DisplayName": "Moto-Perpétuo",
+    "Description": "Críticos reduzem a recarga da skill em +0,2 s; +5% redução de recarga.",
+    "Stance": "Critical",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 2,
+    "Branch": 3,
+    "Tier": 11,
+    "Parents": [
+      "resource_echo"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "crit_cooldown_refund",
+        "Op": "Add",
+        "Value": 0.2
+      },
+      {
+        "Stat": "cooldown_reduction",
+        "Op": "Add",
+        "Value": 0.05
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "deaths_metronome",
+    "CardId": "deaths_metronome",
+    "DisplayName": "Metrônomo da Morte",
+    "Description": "Todo 5º ataque é crítico garantido e reinicia a esquiva; +10% velocidade de ataque.",
+    "Stance": "Critical",
+    "Rarity": "Epic",
+    "Weight": 1,
+    "MaxStacks": 1,
+    "Branch": 3,
+    "Tier": 12,
+    "Parents": [
+      "perpetual_motion",
+      "annihilation"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "crit_every_nth",
+        "Op": "Add",
+        "Value": 5
+      },
+      {
+        "Stat": "attack_speed",
+        "Op": "Mult",
+        "Value": 1.1
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "elemental_amp",
+    "CardId": "elemental_amp",
+    "DisplayName": "Amplificação Elemental",
+    "Description": "+8% dano elemental.",
+    "Stance": "Arcane",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 5,
+    "Branch": 0,
+    "Tier": 1,
+    "Parents": [],
+    "Modifiers": [
+      {
+        "Stat": "elemental_amp",
+        "Op": "Add",
+        "Value": 0.08
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "arcane_power",
+    "CardId": "arcane_power",
+    "DisplayName": "Poder Arcano",
+    "Description": "+8% dano e +5% dano elemental.",
+    "Stance": "Arcane",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 0,
+    "Tier": 2,
+    "Parents": [
+      "elemental_amp"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "damage",
+        "Op": "Mult",
+        "Value": 1.08
+      },
+      {
+        "Stat": "elemental_amp",
+        "Op": "Add",
+        "Value": 0.05
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "kindling",
+    "CardId": "kindling",
+    "DisplayName": "Brasa Viva",
+    "Description": "+6% dano de área.",
+    "Stance": "Arcane",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 4,
+    "Branch": 0,
+    "Tier": 3,
+    "Parents": [
+      "arcane_power"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "aoe_damage",
+        "Op": "Add",
+        "Value": 0.06
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "ignite",
+    "CardId": "ignite",
+    "DisplayName": "Ignição",
+    "Description": "Acertos da skill queimam: 30% do dano em 4 s.",
+    "Stance": "Arcane",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 0,
+    "Tier": 4,
+    "Parents": [
+      "kindling",
+      "clarity"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "skill_burn_pct",
+        "Op": "Add",
+        "Value": 0.3
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "wider_blast",
+    "CardId": "wider_blast",
+    "DisplayName": "Explosão Ampla",
+    "Description": "Raio de área ×1,12.",
+    "Stance": "Arcane",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 3,
+    "Branch": 0,
+    "Tier": 5,
+    "Parents": [
+      "ignite"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "aoe_radius",
+        "Op": "Mult",
+        "Value": 1.12
+      },
+      {
+        "Stat": "area_scale",
+        "Op": "Mult",
+        "Value": 1.12
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "inferno",
+    "CardId": "inferno",
+    "DisplayName": "Inferno",
+    "Description": "+15% dano elemental; queimadura acumula +1×.",
+    "Stance": "Arcane",
+    "Rarity": "Epic",
+    "Weight": 2,
+    "MaxStacks": 2,
+    "Branch": 0,
+    "Tier": 6,
+    "Parents": [
+      "wider_blast"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "elemental_amp",
+        "Op": "Add",
+        "Value": 0.15
+      },
+      {
+        "Stat": "burn_max_stacks",
+        "Op": "Add",
+        "Value": 1
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "scorched_earth",
+    "CardId": "scorched_earth",
+    "DisplayName": "Terra Calcinada",
+    "Description": "Skills em área deixam o chão em chamas por 3 s (15% do dano/s).",
+    "Stance": "Arcane",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 3,
+    "Branch": 0,
+    "Tier": 7,
+    "Parents": [
+      "inferno"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "scorched_ground",
+        "Op": "Add",
+        "Value": 0.15
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "fire_and_ice",
+    "CardId": "fire_and_ice",
+    "DisplayName": "Fogo e Gelo",
+    "Description": "+20% dano contra alvos lentos ou queimando.",
+    "Stance": "Arcane",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 0,
+    "Tier": 8,
+    "Parents": [
+      "scorched_earth",
+      "deep_freeze"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "damage_vs_slow_burn",
+        "Op": "Add",
+        "Value": 0.2
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "meteor_heart",
+    "CardId": "meteor_heart",
+    "DisplayName": "Coração de Meteoro",
+    "Description": "A cada 12 s, o próximo ataque básico explode (2,5 m, ×2 dano).",
+    "Stance": "Arcane",
+    "Rarity": "Epic",
+    "Weight": 2,
+    "MaxStacks": 1,
+    "Branch": 0,
+    "Tier": 9,
+    "Parents": [
+      "fire_and_ice"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "meteor_interval",
+        "Op": "Add",
+        "Value": 12
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "combustion",
+    "CardId": "combustion",
+    "DisplayName": "Combustão",
+    "Description": "Quem morre queimando explode: 25% da vida máx. do morto em 2 m (teto 4× o golpe que queimou).",
+    "Stance": "Arcane",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 0,
+    "Tier": 10,
+    "Parents": [
+      "meteor_heart"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "burn_death_explode",
+        "Op": "Add",
+        "Value": 0.25
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "primal_heat",
+    "CardId": "primal_heat",
+    "DisplayName": "Calor Primordial",
+    "Description": "+10% dano elemental e +5% dano.",
+    "Stance": "Arcane",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 0,
+    "Tier": 11,
+    "Parents": [
+      "combustion"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "elemental_amp",
+        "Op": "Add",
+        "Value": 0.1
+      },
+      {
+        "Stat": "damage",
+        "Op": "Mult",
+        "Value": 1.05
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "avatar_of_flame",
+    "CardId": "avatar_of_flame",
+    "DisplayName": "Avatar da Chama",
+    "Description": "+30% dano elemental; após a skill, vira chama por 4 s: +20% movimento e queima quem toca (40% do dano/s).",
+    "Stance": "Arcane",
+    "Rarity": "Epic",
+    "Weight": 1,
+    "MaxStacks": 1,
+    "Branch": 0,
+    "Tier": 12,
+    "Parents": [
+      "primal_heat",
+      "spell_weaving"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "elemental_amp",
+        "Op": "Add",
+        "Value": 0.3
+      },
+      {
+        "Stat": "flame_form",
+        "Op": "Add",
+        "Value": 0.4
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "quick_mind",
+    "CardId": "quick_mind",
+    "DisplayName": "Mente Acelerada",
+    "Description": "+5% redução de recarga.",
+    "Stance": "Arcane",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 4,
+    "Branch": 1,
+    "Tier": 1,
+    "Parents": [],
+    "Modifiers": [
+      {
+        "Stat": "cooldown_reduction",
+        "Op": "Add",
+        "Value": 0.05
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "frost_touch",
+    "CardId": "frost_touch",
+    "DisplayName": "Toque Gélido",
+    "Description": "Skills deixam inimigos 15% mais lentos por 2 s.",
+    "Stance": "Arcane",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 3,
+    "Branch": 1,
+    "Tier": 2,
+    "Parents": [
+      "quick_mind"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "skill_slow_pct",
+        "Op": "Add",
+        "Value": 0.15
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "clarity",
+    "CardId": "clarity",
+    "DisplayName": "Clareza",
+    "Description": "+4% redução de recarga e +5% recurso máximo.",
+    "Stance": "Arcane",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 4,
+    "Branch": 1,
+    "Tier": 3,
+    "Parents": [
+      "frost_touch"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "cooldown_reduction",
+        "Op": "Add",
+        "Value": 0.04
+      },
+      {
+        "Stat": "resource_max",
+        "Op": "Mult",
+        "Value": 1.05
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "shatter_frost",
+    "CardId": "shatter_frost",
+    "DisplayName": "Geada Estilhaçante",
+    "Description": "Alvos lentos recebem +10% dano da skill.",
+    "Stance": "Arcane",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 1,
+    "Tier": 4,
+    "Parents": [
+      "clarity",
+      "kindling"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "skill_damage_vs_slow",
+        "Op": "Add",
+        "Value": 0.1
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "echo_mind",
+    "CardId": "echo_mind",
+    "DisplayName": "Mente em Eco",
+    "Description": "8% de chance da skill não entrar em recarga.",
+    "Stance": "Arcane",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 3,
+    "Branch": 1,
+    "Tier": 5,
+    "Parents": [
+      "shatter_frost"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "skill_echo_chance",
+        "Op": "Add",
+        "Value": 0.08
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "overload",
+    "CardId": "overload",
+    "DisplayName": "Sobrecarga",
+    "Description": "+25% dano elemental e +10% redução de recarga.",
+    "Stance": "Arcane",
+    "Rarity": "Epic",
+    "Weight": 2,
+    "MaxStacks": 1,
+    "Branch": 1,
+    "Tier": 6,
+    "Parents": [
+      "echo_mind"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "elemental_amp",
+        "Op": "Add",
+        "Value": 0.25
+      },
+      {
+        "Stat": "cooldown_reduction",
+        "Op": "Add",
+        "Value": 0.1
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "deep_freeze",
+    "CardId": "deep_freeze",
+    "DisplayName": "Congelamento",
+    "Description": "3ª skill seguida no mesmo alvo congela por 1 s (chefes: 30% de lentidão).",
+    "Stance": "Arcane",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 2,
+    "Branch": 1,
+    "Tier": 7,
+    "Parents": [
+      "overload"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "freeze_third_skill",
+        "Op": "Add",
+        "Value": 1
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "time_dilation",
+    "CardId": "time_dilation",
+    "DisplayName": "Dilatação Temporal",
+    "Description": "Esquivar reduz a recarga da skill em 0,5 s.",
+    "Stance": "Arcane",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 1,
+    "Tier": 8,
+    "Parents": [
+      "deep_freeze",
+      "efficient_casting"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "dodge_skill_refund",
+        "Op": "Add",
+        "Value": 0.5
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "winter_crown",
+    "CardId": "winter_crown",
+    "DisplayName": "Coroa do Inverno",
+    "Description": "Aura de 3 m: inimigos −20% movimento e −10% dano.",
+    "Stance": "Arcane",
+    "Rarity": "Epic",
+    "Weight": 2,
+    "MaxStacks": 1,
+    "Branch": 1,
+    "Tier": 9,
+    "Parents": [
+      "time_dilation"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "winter_aura",
+        "Op": "Add",
+        "Value": 1
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "focus_matrix",
+    "CardId": "focus_matrix",
+    "DisplayName": "Matriz de Foco",
+    "Description": "+3% redução de recarga por skill usada nos últimos 6 s (máx. 3).",
+    "Stance": "Arcane",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 1,
+    "Tier": 10,
+    "Parents": [
+      "winter_crown"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "cdr_per_recent_skill",
+        "Op": "Add",
+        "Value": 0.03
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "mental_fortress",
+    "CardId": "mental_fortress",
+    "DisplayName": "Fortaleza Mental",
+    "Description": "+15% resistência a controle e +5% redução de recarga.",
+    "Stance": "Arcane",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 2,
+    "Branch": 1,
+    "Tier": 11,
+    "Parents": [
+      "focus_matrix"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "cc_resist",
+        "Op": "Add",
+        "Value": 0.15
+      },
+      {
+        "Stat": "cooldown_reduction",
+        "Op": "Add",
+        "Value": 0.05
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "absolute_zero",
+    "CardId": "absolute_zero",
+    "DisplayName": "Zero Absoluto",
+    "Description": "Teto de redução de recarga 60% → 70%; skills congelam comuns por 0,8 s (1×/6 s por alvo).",
+    "Stance": "Arcane",
+    "Rarity": "Epic",
+    "Weight": 1,
+    "MaxStacks": 1,
+    "Branch": 1,
+    "Tier": 12,
+    "Parents": [
+      "mental_fortress",
+      "primal_heat"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "cdr_cap_bonus",
+        "Op": "Add",
+        "Value": 0.1
+      },
+      {
+        "Stat": "skill_freeze_sec",
+        "Op": "Add",
+        "Value": 0.8
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "energy_flow",
+    "CardId": "energy_flow",
+    "DisplayName": "Fluxo de Energia",
+    "Description": "+20% recuperação de recurso.",
+    "Stance": "Arcane",
+    "Rarity": "Common",
+    "Weight": 8,
+    "MaxStacks": 4,
+    "Branch": 2,
+    "Tier": 1,
+    "Parents": [],
+    "Modifiers": [
+      {
+        "Stat": "resource_regen",
+        "Op": "Mult",
+        "Value": 1.2
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "swift_channel",
+    "CardId": "swift_channel",
+    "DisplayName": "Canalização Rápida",
+    "Description": "+10% velocidade de ataque.",
+    "Stance": "Arcane",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 2,
+    "Tier": 2,
+    "Parents": [
+      "quick_mind",
+      "energy_flow"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "attack_speed",
+        "Op": "Mult",
+        "Value": 1.1
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "deep_well",
+    "CardId": "deep_well",
+    "DisplayName": "Poço Profundo",
+    "Description": "+10% recurso máximo.",
+    "Stance": "Arcane",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 4,
+    "Branch": 2,
+    "Tier": 3,
+    "Parents": [
+      "swift_channel"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "resource_max",
+        "Op": "Mult",
+        "Value": 1.1
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "mana_shield",
+    "CardId": "mana_shield",
+    "DisplayName": "Escudo de Mana",
+    "Description": "15% do dano recebido é pago com recurso (1 recurso = 2 de vida).",
+    "Stance": "Arcane",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 2,
+    "Branch": 2,
+    "Tier": 4,
+    "Parents": [
+      "deep_well",
+      "static_charge"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "mana_shield_pct",
+        "Op": "Add",
+        "Value": 0.15
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "siphon",
+    "CardId": "siphon",
+    "DisplayName": "Sifão",
+    "Description": "Acertos da skill devolvem 4% do recurso máximo (1× por uso).",
+    "Stance": "Arcane",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 3,
+    "Branch": 2,
+    "Tier": 5,
+    "Parents": [
+      "mana_shield"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "skill_hit_resource",
+        "Op": "Add",
+        "Value": 0.04
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "arcane_surge",
+    "CardId": "arcane_surge",
+    "DisplayName": "Surto Arcano",
+    "Description": "Com recurso acima de 80%: +15% dano.",
+    "Stance": "Arcane",
+    "Rarity": "Epic",
+    "Weight": 2,
+    "MaxStacks": 2,
+    "Branch": 2,
+    "Tier": 6,
+    "Parents": [
+      "siphon"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "high_resource_damage",
+        "Op": "Add",
+        "Value": 0.15
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "efficient_casting",
+    "CardId": "efficient_casting",
+    "DisplayName": "Conjuração Eficiente",
+    "Description": "−6% custo de recurso da skill.",
+    "Stance": "Arcane",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 4,
+    "Branch": 2,
+    "Tier": 7,
+    "Parents": [
+      "arcane_surge"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "resource_cost_reduction",
+        "Op": "Add",
+        "Value": 0.06
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "leyline",
+    "CardId": "leyline",
+    "DisplayName": "Linha de Ley",
+    "Description": "Parado por 1 s cria um círculo de 2 m: +30% regeneração de recurso e +10% vel. de ataque.",
+    "Stance": "Arcane",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 2,
+    "Tier": 8,
+    "Parents": [
+      "efficient_casting",
+      "arc_flash"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "leyline",
+        "Op": "Add",
+        "Value": 1
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "infinite_reservoir",
+    "CardId": "infinite_reservoir",
+    "DisplayName": "Reservatório Infinito",
+    "Description": "A cada 20 s, a próxima skill é grátis e causa +25% dano.",
+    "Stance": "Arcane",
+    "Rarity": "Epic",
+    "Weight": 2,
+    "MaxStacks": 1,
+    "Branch": 2,
+    "Tier": 9,
+    "Parents": [
+      "leyline"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "free_skill_interval",
+        "Op": "Add",
+        "Value": 20
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "overflow",
+    "CardId": "overflow",
+    "DisplayName": "Transbordar",
+    "Description": "Recurso acima do máximo vira escudo (teto 6% da vida máx.).",
+    "Stance": "Arcane",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 2,
+    "Tier": 10,
+    "Parents": [
+      "infinite_reservoir"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "overflow_shield",
+        "Op": "Add",
+        "Value": 0.06
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "spell_weaving",
+    "CardId": "spell_weaving",
+    "DisplayName": "Tecer Feitiços",
+    "Description": "+8% vel. de ataque e +8% regeneração de recurso.",
+    "Stance": "Arcane",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 2,
+    "Tier": 11,
+    "Parents": [
+      "overflow"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "attack_speed",
+        "Op": "Mult",
+        "Value": 1.08
+      },
+      {
+        "Stat": "resource_regen",
+        "Op": "Mult",
+        "Value": 1.08
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "archmage_soul",
+    "CardId": "archmage_soul",
+    "DisplayName": "Alma de Arquimago",
+    "Description": "Recurso máx. ×1,25; cada 1% de recurso gasto dá +0,5% dano por 3 s (máx. +25%).",
+    "Stance": "Arcane",
+    "Rarity": "Epic",
+    "Weight": 1,
+    "MaxStacks": 1,
+    "Branch": 2,
+    "Tier": 12,
+    "Parents": [
+      "spell_weaving",
+      "mental_fortress"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "resource_max",
+        "Op": "Mult",
+        "Value": 1.25
+      },
+      {
+        "Stat": "spent_resource_damage",
+        "Op": "Add",
+        "Value": 0.5
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "static_charge",
+    "CardId": "static_charge",
+    "DisplayName": "Carga Estática",
+    "Description": "5% de chance do acerto soltar um raio num inimigo próximo (40% do dano).",
+    "Stance": "Arcane",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 5,
+    "Branch": 3,
+    "Tier": 1,
+    "Parents": [],
+    "Modifiers": [
+      {
+        "Stat": "lightning_chance",
+        "Op": "Add",
+        "Value": 0.05
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "conductor",
+    "CardId": "conductor",
+    "DisplayName": "Condutor",
+    "Description": "Raios saltam para +1 alvo.",
+    "Stance": "Arcane",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 3,
+    "Branch": 3,
+    "Tier": 2,
+    "Parents": [
+      "static_charge"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "lightning_chain",
+        "Op": "Add",
+        "Value": 1
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "storm_call",
+    "CardId": "storm_call",
+    "DisplayName": "Chamado da Tempestade",
+    "Description": "+6% dano elemental e +4% chance de raio.",
+    "Stance": "Arcane",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 3,
+    "Tier": 3,
+    "Parents": [
+      "conductor"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "elemental_amp",
+        "Op": "Add",
+        "Value": 0.06
+      },
+      {
+        "Stat": "lightning_chance",
+        "Op": "Add",
+        "Value": 0.04
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "thunderclap",
+    "CardId": "thunderclap",
+    "DisplayName": "Trovoada",
+    "Description": "Raios atordoam comuns por 0,2 s.",
+    "Stance": "Arcane",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 3,
+    "Tier": 4,
+    "Parents": [
+      "storm_call",
+      "deep_well"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "lightning_stun_sec",
+        "Op": "Add",
+        "Value": 0.2
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "ozone",
+    "CardId": "ozone",
+    "DisplayName": "Ozônio",
+    "Description": "+5% movimento; raios devolvem 2% do recurso.",
+    "Stance": "Arcane",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 3,
+    "Branch": 3,
+    "Tier": 5,
+    "Parents": [
+      "thunderclap"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "move_speed",
+        "Op": "Mult",
+        "Value": 1.05
+      },
+      {
+        "Stat": "lightning_resource",
+        "Op": "Add",
+        "Value": 0.02
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "ball_lightning",
+    "CardId": "ball_lightning",
+    "DisplayName": "Relâmpago Globular",
+    "Description": "A cada 10 s, uma esfera orbita você por 5 s (30% do dano/s ao tocar).",
+    "Stance": "Arcane",
+    "Rarity": "Epic",
+    "Weight": 2,
+    "MaxStacks": 2,
+    "Branch": 3,
+    "Tier": 6,
+    "Parents": [
+      "ozone"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "ball_lightning",
+        "Op": "Add",
+        "Value": 0.3
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "arc_flash",
+    "CardId": "arc_flash",
+    "DisplayName": "Arco Voltaico",
+    "Description": "+15% dano de raio.",
+    "Stance": "Arcane",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 4,
+    "Branch": 3,
+    "Tier": 7,
+    "Parents": [
+      "ball_lightning"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "lightning_damage",
+        "Op": "Add",
+        "Value": 0.15
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "supercell",
+    "CardId": "supercell",
+    "DisplayName": "Supercélula",
+    "Description": "Skills em área: 25% de chance de raio do céu (×1,5 dano).",
+    "Stance": "Arcane",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 3,
+    "Tier": 8,
+    "Parents": [
+      "arc_flash",
+      "scorched_earth"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "aoe_lightning_chance",
+        "Op": "Add",
+        "Value": 0.25
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "eye_of_the_tempest",
+    "CardId": "eye_of_the_tempest",
+    "DisplayName": "Olho do Temporal",
+    "Description": "Raios encadeiam até 5 alvos sem perder dano.",
+    "Stance": "Arcane",
+    "Rarity": "Epic",
+    "Weight": 2,
+    "MaxStacks": 1,
+    "Branch": 3,
+    "Tier": 9,
+    "Parents": [
+      "supercell"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "lightning_chain_max",
+        "Op": "Add",
+        "Value": 5
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "magnetize",
+    "CardId": "magnetize",
+    "DisplayName": "Magnetizar",
+    "Description": "Acertos da skill puxam comuns 0,5 m para o alvo principal.",
+    "Stance": "Arcane",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 3,
+    "Tier": 10,
+    "Parents": [
+      "eye_of_the_tempest"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "skill_pull_px",
+        "Op": "Add",
+        "Value": 20
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "grounding",
+    "CardId": "grounding",
+    "DisplayName": "Aterramento",
+    "Description": "+10% dano elemental e +10% chance de raio.",
+    "Stance": "Arcane",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 2,
+    "Branch": 3,
+    "Tier": 11,
+    "Parents": [
+      "magnetize"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "elemental_amp",
+        "Op": "Add",
+        "Value": 0.1
+      },
+      {
+        "Stat": "lightning_chance",
+        "Op": "Add",
+        "Value": 0.1
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "storm_god",
+    "CardId": "storm_god",
+    "DisplayName": "Deus da Tempestade",
+    "Description": "Todo crítico de skill/área solta raio garantido; raios ×2 em chefes.",
+    "Stance": "Arcane",
+    "Rarity": "Epic",
+    "Weight": 1,
+    "MaxStacks": 1,
+    "Branch": 3,
+    "Tier": 12,
+    "Parents": [
+      "grounding",
+      "spell_weaving"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "storm_god",
+        "Op": "Add",
+        "Value": 1
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "plating",
+    "CardId": "plating",
+    "DisplayName": "Couraça",
+    "Description": "+10 de armadura.",
+    "Stance": "Defense",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 5,
+    "Branch": 0,
+    "Tier": 1,
+    "Parents": [],
+    "Modifiers": [
+      {
+        "Stat": "armor",
+        "Op": "Add",
+        "Value": 10
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "riveted_mail",
+    "CardId": "riveted_mail",
+    "DisplayName": "Malha Rebitada",
+    "Description": "+8 de armadura e +3% vida máxima.",
+    "Stance": "Defense",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 4,
+    "Branch": 0,
+    "Tier": 2,
+    "Parents": [
+      "plating"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "armor",
+        "Op": "Add",
+        "Value": 8
+      },
+      {
+        "Stat": "max_health",
+        "Op": "Mult",
+        "Value": 1.03
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "shield_wall",
+    "CardId": "shield_wall",
+    "DisplayName": "Parede de Escudos",
+    "Description": "+20 de armadura com 3+ inimigos a até 4 m.",
+    "Stance": "Defense",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 0,
+    "Tier": 3,
+    "Parents": [
+      "riveted_mail"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "crowd_armor",
+        "Op": "Add",
+        "Value": 20
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "deflection",
+    "CardId": "deflection",
+    "DisplayName": "Deflexão",
+    "Description": "8% de chance de bloquear projéteis (−75% dano).",
+    "Stance": "Defense",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 0,
+    "Tier": 4,
+    "Parents": [
+      "shield_wall",
+      "second_wind"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "projectile_block_chance",
+        "Op": "Add",
+        "Value": 0.08
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "heavy_plates",
+    "CardId": "heavy_plates",
+    "DisplayName": "Placas Pesadas",
+    "Description": "+25 de armadura, −3% movimento.",
+    "Stance": "Defense",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 3,
+    "Branch": 0,
+    "Tier": 5,
+    "Parents": [
+      "deflection"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "armor",
+        "Op": "Add",
+        "Value": 25
+      },
+      {
+        "Stat": "move_speed",
+        "Op": "Mult",
+        "Value": 0.97
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "bulwark",
+    "CardId": "bulwark",
+    "DisplayName": "Baluarte",
+    "Description": "+20% vida máxima e +20 de armadura.",
+    "Stance": "Defense",
+    "Rarity": "Epic",
+    "Weight": 2,
+    "MaxStacks": 1,
+    "Branch": 0,
+    "Tier": 6,
+    "Parents": [
+      "heavy_plates"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "max_health",
+        "Op": "Mult",
+        "Value": 1.2
+      },
+      {
+        "Stat": "armor",
+        "Op": "Add",
+        "Value": 20
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "iron_hide",
+    "CardId": "iron_hide",
+    "DisplayName": "Couro de Ferro",
+    "Description": "−6% dano de contato recebido.",
+    "Stance": "Defense",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 4,
+    "Branch": 0,
+    "Tier": 7,
+    "Parents": [
+      "bulwark"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "contact_damage_reduction",
+        "Op": "Add",
+        "Value": 0.06
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "unbreakable_line",
+    "CardId": "unbreakable_line",
+    "DisplayName": "Linha Inquebrável",
+    "Description": "Aura: aliados a até 5 m ganham +10 de armadura.",
+    "Stance": "Defense",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 0,
+    "Tier": 8,
+    "Parents": [
+      "iron_hide",
+      "overshield"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "aura_armor",
+        "Op": "Add",
+        "Value": 10
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "fortress",
+    "CardId": "fortress",
+    "DisplayName": "Fortaleza",
+    "Description": "Armadura ×1,25; quem te ataca corpo a corpo fica 10% mais lento.",
+    "Stance": "Defense",
+    "Rarity": "Epic",
+    "Weight": 2,
+    "MaxStacks": 1,
+    "Branch": 0,
+    "Tier": 9,
+    "Parents": [
+      "unbreakable_line"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "armor",
+        "Op": "Mult",
+        "Value": 1.25
+      },
+      {
+        "Stat": "melee_attacker_slow",
+        "Op": "Add",
+        "Value": 0.1
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "reactive_plating",
+    "CardId": "reactive_plating",
+    "DisplayName": "Blindagem Reativa",
+    "Description": "Golpe acima de 10% da vida máx.: +40 de armadura por 4 s (recarga 8 s).",
+    "Stance": "Defense",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 0,
+    "Tier": 10,
+    "Parents": [
+      "fortress"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "reactive_armor",
+        "Op": "Add",
+        "Value": 40
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "tempered",
+    "CardId": "tempered",
+    "DisplayName": "Temperado",
+    "Description": "+20 de armadura e +5% vida máxima.",
+    "Stance": "Defense",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 0,
+    "Tier": 11,
+    "Parents": [
+      "reactive_plating"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "armor",
+        "Op": "Add",
+        "Value": 20
+      },
+      {
+        "Stat": "max_health",
+        "Op": "Mult",
+        "Value": 1.05
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "living_citadel",
+    "CardId": "living_citadel",
+    "DisplayName": "Cidadela Viva",
+    "Description": "Cada 10 de armadura vira 1% de redução de dano (máx. +15%); −10% dano de contato de chefes.",
+    "Stance": "Defense",
+    "Rarity": "Epic",
+    "Weight": 1,
+    "MaxStacks": 1,
+    "Branch": 0,
+    "Tier": 12,
+    "Parents": [
+      "tempered",
+      "vigor"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "armor_to_dr",
+        "Op": "Add",
+        "Value": 0.01
+      },
+      {
+        "Stat": "boss_damage_reduction",
+        "Op": "Add",
+        "Value": 0.1
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "regeneration",
+    "CardId": "regeneration",
+    "DisplayName": "Regeneração",
+    "Description": "+4 de vida por segundo.",
+    "Stance": "Defense",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 5,
+    "Branch": 1,
+    "Tier": 1,
+    "Parents": [],
+    "Modifiers": [
+      {
+        "Stat": "health_regen",
+        "Op": "Add",
+        "Value": 4
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "vitality",
+    "CardId": "vitality",
+    "DisplayName": "Vitalidade",
+    "Description": "+8% vida máxima.",
+    "Stance": "Defense",
+    "Rarity": "Common",
+    "Weight": 8,
+    "MaxStacks": 4,
+    "Branch": 1,
+    "Tier": 2,
+    "Parents": [
+      "regeneration"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "max_health",
+        "Op": "Mult",
+        "Value": 1.08
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "second_wind",
+    "CardId": "second_wind",
+    "DisplayName": "Segundo Fôlego",
+    "Description": "Abaixo de 40% de vida: regeneração ×3 por 5 s (recarga 30 s).",
+    "Stance": "Defense",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 1,
+    "Tier": 3,
+    "Parents": [
+      "vitality"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "second_wind",
+        "Op": "Add",
+        "Value": 1
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "troll_blood",
+    "CardId": "troll_blood",
+    "DisplayName": "Sangue de Troll",
+    "Description": "+0,4% da vida máx. por segundo.",
+    "Stance": "Defense",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 1,
+    "Tier": 4,
+    "Parents": [
+      "second_wind",
+      "shield_wall"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "health_regen_pct",
+        "Op": "Add",
+        "Value": 0.004
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "hearty",
+    "CardId": "hearty",
+    "DisplayName": "Robusto",
+    "Description": "+6% vida máxima.",
+    "Stance": "Defense",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 4,
+    "Branch": 1,
+    "Tier": 5,
+    "Parents": [
+      "troll_blood"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "max_health",
+        "Op": "Mult",
+        "Value": 1.06
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "undying",
+    "CardId": "undying",
+    "DisplayName": "Imorredouro",
+    "Description": "1× por onda: um golpe fatal te deixa com 1 de vida e 1,5 s invulnerável.",
+    "Stance": "Defense",
+    "Rarity": "Epic",
+    "Weight": 2,
+    "MaxStacks": 1,
+    "Branch": 1,
+    "Tier": 6,
+    "Parents": [
+      "hearty"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "undying",
+        "Op": "Add",
+        "Value": 1
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "herbal_lore",
+    "CardId": "herbal_lore",
+    "DisplayName": "Saber das Ervas",
+    "Description": "+25% de cura recebida.",
+    "Stance": "Defense",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 4,
+    "Branch": 1,
+    "Tier": 7,
+    "Parents": [
+      "undying"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "healing_received",
+        "Op": "Add",
+        "Value": 0.25
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "rally_heart",
+    "CardId": "rally_heart",
+    "DisplayName": "Coração Firme",
+    "Description": "Cura acima do máximo vira escudo de 30% do excedente.",
+    "Stance": "Defense",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 1,
+    "Tier": 8,
+    "Parents": [
+      "herbal_lore",
+      "overshield"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "overheal_shield",
+        "Op": "Add",
+        "Value": 0.3
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "phoenix_ember",
+    "CardId": "phoenix_ember",
+    "DisplayName": "Brasa da Fênix",
+    "Description": "Ao cair, revive após 4 s com 40% de vida (1× por partida).",
+    "Stance": "Defense",
+    "Rarity": "Epic",
+    "Weight": 2,
+    "MaxStacks": 1,
+    "Branch": 1,
+    "Tier": 9,
+    "Parents": [
+      "rally_heart"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "phoenix",
+        "Op": "Add",
+        "Value": 0.4
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "vigor",
+    "CardId": "vigor",
+    "DisplayName": "Vigor",
+    "Description": "+8% vida máxima e +3 de regeneração.",
+    "Stance": "Defense",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 1,
+    "Tier": 10,
+    "Parents": [
+      "phoenix_ember"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "max_health",
+        "Op": "Mult",
+        "Value": 1.08
+      },
+      {
+        "Stat": "health_regen",
+        "Op": "Add",
+        "Value": 3
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "blood_pump",
+    "CardId": "blood_pump",
+    "DisplayName": "Bomba de Sangue",
+    "Description": "Regeneração dobrada por 3 s após esquiva.",
+    "Stance": "Defense",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 1,
+    "Tier": 11,
+    "Parents": [
+      "vigor"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "dodge_regen_sec",
+        "Op": "Add",
+        "Value": 3
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "eternal_oak",
+    "CardId": "eternal_oak",
+    "DisplayName": "Carvalho Eterno",
+    "Description": "Vida máx. ×1,15; regeneração +1% para cada 1% de vida perdida (máx. +100%).",
+    "Stance": "Defense",
+    "Rarity": "Epic",
+    "Weight": 1,
+    "MaxStacks": 1,
+    "Branch": 1,
+    "Tier": 12,
+    "Parents": [
+      "blood_pump",
+      "runic_mastery"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "max_health",
+        "Op": "Mult",
+        "Value": 1.15
+      },
+      {
+        "Stat": "missing_hp_regen",
+        "Op": "Add",
+        "Value": 1
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "ward_rune",
+    "CardId": "ward_rune",
+    "DisplayName": "Runa de Proteção",
+    "Description": "Escudo de 40 no início da onda.",
+    "Stance": "Defense",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 5,
+    "Branch": 2,
+    "Tier": 1,
+    "Parents": [],
+    "Modifiers": [
+      {
+        "Stat": "shield_on_wave",
+        "Op": "Add",
+        "Value": 40
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "barrier",
+    "CardId": "barrier",
+    "DisplayName": "Barreira",
+    "Description": "Escudo de 120 no início de cada onda.",
+    "Stance": "Defense",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 2,
+    "Tier": 2,
+    "Parents": [
+      "ward_rune",
+      "regeneration"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "shield_on_wave",
+        "Op": "Add",
+        "Value": 120
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "shield_battery",
+    "CardId": "shield_battery",
+    "DisplayName": "Bateria de Escudo",
+    "Description": "Escudos recebidos ×1,15.",
+    "Stance": "Defense",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 4,
+    "Branch": 2,
+    "Tier": 3,
+    "Parents": [
+      "barrier"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "shield_mult",
+        "Op": "Mult",
+        "Value": 1.15
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "reflective_ward",
+    "CardId": "reflective_ward",
+    "DisplayName": "Égide Refletora",
+    "Description": "Com escudo ativo, devolve 15% do dano corpo a corpo.",
+    "Stance": "Defense",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 2,
+    "Tier": 4,
+    "Parents": [
+      "shield_battery",
+      "thorns"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "shield_reflect",
+        "Op": "Add",
+        "Value": 0.15
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "aegis_pulse",
+    "CardId": "aegis_pulse",
+    "DisplayName": "Pulso da Égide",
+    "Description": "Escudo que quebra explode: 50% do valor como dano em 2,5 m.",
+    "Stance": "Defense",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 3,
+    "Branch": 2,
+    "Tier": 5,
+    "Parents": [
+      "reflective_ward"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "shield_break_explode",
+        "Op": "Add",
+        "Value": 0.5
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "bastion_core",
+    "CardId": "bastion_core",
+    "DisplayName": "Núcleo do Bastião",
+    "Description": "Sem escudo: ganha 8% da vida máx. em escudo a cada 12 s.",
+    "Stance": "Defense",
+    "Rarity": "Epic",
+    "Weight": 2,
+    "MaxStacks": 2,
+    "Branch": 2,
+    "Tier": 6,
+    "Parents": [
+      "aegis_pulse"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "bastion_core",
+        "Op": "Add",
+        "Value": 0.08
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "overshield",
+    "CardId": "overshield",
+    "DisplayName": "Sobrescudo",
+    "Description": "+20% no teto de escudo acumulado.",
+    "Stance": "Defense",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 4,
+    "Branch": 2,
+    "Tier": 7,
+    "Parents": [
+      "bastion_core"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "shield_cap",
+        "Op": "Add",
+        "Value": 0.2
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "guardian_angel",
+    "CardId": "guardian_angel",
+    "DisplayName": "Anjo da Guarda",
+    "Description": "Abaixo de 25% de vida: escudo de 15% da vida máx. (recarga 40 s).",
+    "Stance": "Defense",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 2,
+    "Tier": 8,
+    "Parents": [
+      "overshield",
+      "herbal_lore"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "guardian_angel",
+        "Op": "Add",
+        "Value": 0.15
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "prismatic_ward",
+    "CardId": "prismatic_ward",
+    "DisplayName": "Égide Prismática",
+    "Description": "Com escudo ativo: −20% dano elemental e de projéteis.",
+    "Stance": "Defense",
+    "Rarity": "Epic",
+    "Weight": 2,
+    "MaxStacks": 1,
+    "Branch": 2,
+    "Tier": 9,
+    "Parents": [
+      "guardian_angel"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "shielded_projectile_dr",
+        "Op": "Add",
+        "Value": 0.2
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "kinetic_ward",
+    "CardId": "kinetic_ward",
+    "DisplayName": "Égide Cinética",
+    "Description": "Esquivar dá escudo de 3% da vida máx. (acumula 3).",
+    "Stance": "Defense",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 2,
+    "Tier": 10,
+    "Parents": [
+      "prismatic_ward"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "dodge_shield",
+        "Op": "Add",
+        "Value": 0.03
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "runic_mastery",
+    "CardId": "runic_mastery",
+    "DisplayName": "Maestria Rúnica",
+    "Description": "Escudos ×1,15 e +8 de armadura.",
+    "Stance": "Defense",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 2,
+    "Tier": 11,
+    "Parents": [
+      "kinetic_ward"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "shield_mult",
+        "Op": "Mult",
+        "Value": 1.15
+      },
+      {
+        "Stat": "armor",
+        "Op": "Add",
+        "Value": 8
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "eternal_aegis",
+    "CardId": "eternal_aegis",
+    "DisplayName": "Égide Eterna",
+    "Description": "Escudos não expiram; 20% do escudo absorvido volta como vida.",
+    "Stance": "Defense",
+    "Rarity": "Epic",
+    "Weight": 1,
+    "MaxStacks": 1,
+    "Branch": 2,
+    "Tier": 12,
+    "Parents": [
+      "runic_mastery",
+      "last_stand"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "eternal_aegis",
+        "Op": "Add",
+        "Value": 0.2
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "iron_will",
+    "CardId": "iron_will",
+    "DisplayName": "Vontade de Ferro",
+    "Description": "+6% resistência a controle.",
+    "Stance": "Defense",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 5,
+    "Branch": 3,
+    "Tier": 1,
+    "Parents": [],
+    "Modifiers": [
+      {
+        "Stat": "cc_resist",
+        "Op": "Add",
+        "Value": 0.06
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "tenacity",
+    "CardId": "tenacity",
+    "DisplayName": "Tenacidade",
+    "Description": "+15% resistência a controle e +5 de armadura.",
+    "Stance": "Defense",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 3,
+    "Tier": 2,
+    "Parents": [
+      "plating",
+      "iron_will"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "cc_resist",
+        "Op": "Add",
+        "Value": 0.15
+      },
+      {
+        "Stat": "armor",
+        "Op": "Add",
+        "Value": 5
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "thorns",
+    "CardId": "thorns",
+    "DisplayName": "Espinhos",
+    "Description": "Devolve 10% do dano de contato recebido.",
+    "Stance": "Defense",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 4,
+    "Branch": 3,
+    "Tier": 3,
+    "Parents": [
+      "tenacity"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "thorns_pct",
+        "Op": "Add",
+        "Value": 0.1
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "retaliation",
+    "CardId": "retaliation",
+    "DisplayName": "Retaliação",
+    "Description": "Ao ser atingido, 15% de chance do próximo ataque causar +50%.",
+    "Stance": "Defense",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 3,
+    "Tier": 4,
+    "Parents": [
+      "thorns",
+      "shield_battery"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "retaliation_chance",
+        "Op": "Add",
+        "Value": 0.15
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "steadfast",
+    "CardId": "steadfast",
+    "DisplayName": "Firme",
+    "Description": "Imune a empurrões leves; −5% dano de projéteis.",
+    "Stance": "Defense",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 3,
+    "Branch": 3,
+    "Tier": 5,
+    "Parents": [
+      "retaliation"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "projectile_damage_reduction",
+        "Op": "Add",
+        "Value": 0.05
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "vengeance",
+    "CardId": "vengeance",
+    "DisplayName": "Vingança",
+    "Description": "+2% dano por golpe recebido (máx. 10, 5 s).",
+    "Stance": "Defense",
+    "Rarity": "Epic",
+    "Weight": 2,
+    "MaxStacks": 2,
+    "Branch": 3,
+    "Tier": 6,
+    "Parents": [
+      "steadfast"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "vengeance",
+        "Op": "Add",
+        "Value": 0.02
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "juggernaut",
+    "CardId": "juggernaut",
+    "DisplayName": "Rolo Compressor",
+    "Description": "+8% resistência a controle; empurra comuns ao atravessá-los.",
+    "Stance": "Defense",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 4,
+    "Branch": 3,
+    "Tier": 7,
+    "Parents": [
+      "vengeance"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "cc_resist",
+        "Op": "Add",
+        "Value": 0.08
+      },
+      {
+        "Stat": "juggernaut_push",
+        "Op": "Add",
+        "Value": 12
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "taunt",
+    "CardId": "taunt",
+    "DisplayName": "Provocação",
+    "Description": "A cada 10 s, atrai inimigos a até 6 m por 3 s e ganha +20 de armadura.",
+    "Stance": "Defense",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 3,
+    "Tier": 8,
+    "Parents": [
+      "juggernaut",
+      "iron_hide"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "taunt",
+        "Op": "Add",
+        "Value": 1
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "immovable",
+    "CardId": "immovable",
+    "DisplayName": "Imóvel",
+    "Description": "Imune a atordoamento e lentidão; −10% movimento.",
+    "Stance": "Defense",
+    "Rarity": "Epic",
+    "Weight": 2,
+    "MaxStacks": 1,
+    "Branch": 3,
+    "Tier": 9,
+    "Parents": [
+      "taunt"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "cc_immune",
+        "Op": "Add",
+        "Value": 1
+      },
+      {
+        "Stat": "move_speed",
+        "Op": "Mult",
+        "Value": 0.9
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "spiked_carapace",
+    "CardId": "spiked_carapace",
+    "DisplayName": "Carapaça Espinhosa",
+    "Description": "Espinhos +10% e aplicam sangramento.",
+    "Stance": "Defense",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 3,
+    "Tier": 10,
+    "Parents": [
+      "immovable"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "thorns_pct",
+        "Op": "Add",
+        "Value": 0.1
+      },
+      {
+        "Stat": "thorns_bleed",
+        "Op": "Add",
+        "Value": 1
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "last_stand",
+    "CardId": "last_stand",
+    "DisplayName": "Última Resistência",
+    "Description": "Abaixo de 30% de vida: −25% dano recebido.",
+    "Stance": "Defense",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 2,
+    "Branch": 3,
+    "Tier": 11,
+    "Parents": [
+      "spiked_carapace"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "low_hp_dr",
+        "Op": "Add",
+        "Value": 0.25
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "titan_heart",
+    "CardId": "titan_heart",
+    "DisplayName": "Coração de Titã",
+    "Description": "50% do dano recebido é adiado por 4 s (dá para curar antes); +20% resistência a controle.",
+    "Stance": "Defense",
+    "Rarity": "Epic",
+    "Weight": 1,
+    "MaxStacks": 1,
+    "Branch": 3,
+    "Tier": 12,
+    "Parents": [
+      "last_stand",
+      "tempered"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "damage_delay",
+        "Op": "Add",
+        "Value": 0.5
+      },
+      {
+        "Stat": "cc_resist",
+        "Op": "Add",
+        "Value": 0.2
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "support_power",
+    "CardId": "support_power",
+    "DisplayName": "Potência de Apoio",
+    "Description": "+15% de efeito das habilidades de apoio.",
+    "Stance": "Support",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 5,
+    "Branch": 0,
+    "Tier": 1,
+    "Parents": [],
+    "Modifiers": [
+      {
+        "Stat": "support_power",
+        "Op": "Add",
+        "Value": 0.15
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "lost_warrior_aura",
+    "CardId": "lost_warrior_aura",
+    "DisplayName": "Aura do Guerreiro Perdido",
+    "Description": "Habilidade: +30% de dano para todos os aliados próximos por 6 s.",
+    "Stance": "Support",
+    "Rarity": "Rare",
+    "Weight": 6,
+    "MaxStacks": 1,
+    "Branch": 0,
+    "Tier": 2,
+    "Parents": [
+      "support_power",
+      "rallying_pulse"
+    ],
+    "Modifiers": [],
+    "GrantedAbilityId": "lost_warrior_aura",
+    "Icon": ""
+  },
+  {
+    "Name": "inspiring_presence",
+    "CardId": "inspiring_presence",
+    "DisplayName": "Presença Inspiradora",
+    "Description": "Aura passiva: aliados a até 6 m +4% dano.",
+    "Stance": "Support",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 4,
+    "Branch": 0,
+    "Tier": 3,
+    "Parents": [
+      "lost_warrior_aura"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "aura_damage",
+        "Op": "Add",
+        "Value": 0.04
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "aura_mastery",
+    "CardId": "aura_mastery",
+    "DisplayName": "Maestria de Aura",
+    "Description": "Buffs de apoio duram +1 s.",
+    "Stance": "Support",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 0,
+    "Tier": 4,
+    "Parents": [
+      "inspiring_presence",
+      "lifebloom"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "support_duration",
+        "Op": "Add",
+        "Value": 1
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "command_voice",
+    "CardId": "command_voice",
+    "DisplayName": "Voz de Comando",
+    "Description": "+10% efeito de apoio e raio ×1,05.",
+    "Stance": "Support",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 3,
+    "Branch": 0,
+    "Tier": 5,
+    "Parents": [
+      "aura_mastery"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "support_power",
+        "Op": "Add",
+        "Value": 0.1
+      },
+      {
+        "Stat": "support_radius",
+        "Op": "Mult",
+        "Value": 1.05
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "commander",
+    "CardId": "commander",
+    "DisplayName": "Comandante",
+    "Description": "+30% de efeito e +25% de raio das habilidades de apoio.",
+    "Stance": "Support",
+    "Rarity": "Epic",
+    "Weight": 2,
+    "MaxStacks": 1,
+    "Branch": 0,
+    "Tier": 6,
+    "Parents": [
+      "command_voice"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "support_power",
+        "Op": "Add",
+        "Value": 0.3
+      },
+      {
+        "Stat": "support_radius",
+        "Op": "Mult",
+        "Value": 1.25
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "war_banner",
+    "CardId": "war_banner",
+    "DisplayName": "Estandarte de Guerra",
+    "Description": "Habilidade: estandarte por 10 s, raio 5 m: aliados +15% dano e +15 de armadura. Recarga 24 s.",
+    "Stance": "Support",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 1,
+    "Branch": 0,
+    "Tier": 7,
+    "Parents": [
+      "commander"
+    ],
+    "Modifiers": [],
+    "GrantedAbilityId": "war_banner",
+    "Icon": ""
+  },
+  {
+    "Name": "vanguard",
+    "CardId": "vanguard",
+    "DisplayName": "Vanguarda",
+    "Description": "Aliados sob seus buffs: +8% movimento.",
+    "Stance": "Support",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 0,
+    "Tier": 8,
+    "Parents": [
+      "war_banner",
+      "field_tactics"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "buffed_ally_move",
+        "Op": "Add",
+        "Value": 0.08
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "heroic_legacy",
+    "CardId": "heroic_legacy",
+    "DisplayName": "Legado Heroico",
+    "Description": "A Aura do Guerreiro Perdido também dá +10% chance crítica.",
+    "Stance": "Support",
+    "Rarity": "Epic",
+    "Weight": 2,
+    "MaxStacks": 1,
+    "Branch": 0,
+    "Tier": 9,
+    "Parents": [
+      "vanguard"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "aura_crit_bonus",
+        "Op": "Add",
+        "Value": 0.1
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "shared_glory",
+    "CardId": "shared_glory",
+    "DisplayName": "Glória Compartilhada",
+    "Description": "Abates de aliados no raio reduzem suas recargas de apoio em 0,3 s.",
+    "Stance": "Support",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 0,
+    "Tier": 10,
+    "Parents": [
+      "heroic_legacy"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "ally_kill_support_cdr",
+        "Op": "Add",
+        "Value": 0.3
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "marshal",
+    "CardId": "marshal",
+    "DisplayName": "Marechal",
+    "Description": "+15% efeito de apoio.",
+    "Stance": "Support",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 0,
+    "Tier": 11,
+    "Parents": [
+      "shared_glory"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "support_power",
+        "Op": "Add",
+        "Value": 0.15
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "living_legend",
+    "CardId": "living_legend",
+    "DisplayName": "Lenda Viva",
+    "Description": "Cada buff de apoio ativo dá +5% dano ao esquadrão (acumula); raio ×1,2.",
+    "Stance": "Support",
+    "Rarity": "Epic",
+    "Weight": 1,
+    "MaxStacks": 1,
+    "Branch": 0,
+    "Tier": 12,
+    "Parents": [
+      "marshal",
+      "renewal"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "buff_stack_damage",
+        "Op": "Add",
+        "Value": 0.05
+      },
+      {
+        "Stat": "support_radius",
+        "Op": "Mult",
+        "Value": 1.2
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "rallying_pulse",
+    "CardId": "rallying_pulse",
+    "DisplayName": "Pulso Revigorante",
+    "Description": "Habilidade: cura 18% da vida máxima dos aliados próximos.",
+    "Stance": "Support",
+    "Rarity": "Common",
+    "Weight": 7,
+    "MaxStacks": 1,
+    "Branch": 1,
+    "Tier": 1,
+    "Parents": [],
+    "Modifiers": [],
+    "GrantedAbilityId": "rallying_pulse",
+    "Icon": ""
+  },
+  {
+    "Name": "mending",
+    "CardId": "mending",
+    "DisplayName": "Remendo",
+    "Description": "+10% cura das habilidades de apoio.",
+    "Stance": "Support",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 4,
+    "Branch": 1,
+    "Tier": 2,
+    "Parents": [
+      "rallying_pulse"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "support_heal_power",
+        "Op": "Add",
+        "Value": 0.1
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "lifebloom",
+    "CardId": "lifebloom",
+    "DisplayName": "Flor da Vida",
+    "Description": "Pulso Revigorante deixa cura contínua de 6% da vida em 4 s.",
+    "Stance": "Support",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 1,
+    "Tier": 3,
+    "Parents": [
+      "mending"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "pulse_hot",
+        "Op": "Add",
+        "Value": 0.06
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "triage",
+    "CardId": "triage",
+    "DisplayName": "Triagem",
+    "Description": "Curas de apoio em aliados abaixo de 35% são 30% maiores.",
+    "Stance": "Support",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 1,
+    "Tier": 4,
+    "Parents": [
+      "lifebloom",
+      "bulwark_oath"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "triage_bonus",
+        "Op": "Add",
+        "Value": 0.3
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "field_medic",
+    "CardId": "field_medic",
+    "DisplayName": "Médico de Campo",
+    "Description": "Aliado caído perto de você se reergue sozinho (10 s, 30% mais rápido por acúmulo).",
+    "Stance": "Support",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 3,
+    "Branch": 1,
+    "Tier": 5,
+    "Parents": [
+      "triage"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "field_medic",
+        "Op": "Add",
+        "Value": 0.3
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "sanctuary",
+    "CardId": "sanctuary",
+    "DisplayName": "Santuário",
+    "Description": "Habilidade: círculo de 4 m por 5 s: aliados curam 5% da vida máx./s e sofrem −30% dano. Recarga 30 s.",
+    "Stance": "Support",
+    "Rarity": "Epic",
+    "Weight": 2,
+    "MaxStacks": 1,
+    "Branch": 1,
+    "Tier": 6,
+    "Parents": [
+      "field_medic"
+    ],
+    "Modifiers": [],
+    "GrantedAbilityId": "sanctuary",
+    "Icon": ""
+  },
+  {
+    "Name": "purify",
+    "CardId": "purify",
+    "DisplayName": "Purificar",
+    "Description": "Curas de apoio removem 1 efeito negativo (lentidão, sangramento, veneno) e curam +5%.",
+    "Stance": "Support",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 3,
+    "Branch": 1,
+    "Tier": 7,
+    "Parents": [
+      "sanctuary"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "support_heal_power",
+        "Op": "Add",
+        "Value": 0.05
+      },
+      {
+        "Stat": "purify",
+        "Op": "Add",
+        "Value": 1
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "vital_link",
+    "CardId": "vital_link",
+    "DisplayName": "Elo Vital",
+    "Description": "10% do seu dano cura o aliado mais ferido no raio.",
+    "Stance": "Support",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 1,
+    "Tier": 8,
+    "Parents": [
+      "purify",
+      "resilient_squad"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "damage_heal_ally",
+        "Op": "Add",
+        "Value": 0.1
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "miracle",
+    "CardId": "miracle",
+    "DisplayName": "Milagre",
+    "Description": "Pulso Revigorante reergue caídos no raio com 20% de vida (recarga própria 90 s).",
+    "Stance": "Support",
+    "Rarity": "Epic",
+    "Weight": 2,
+    "MaxStacks": 1,
+    "Branch": 1,
+    "Tier": 9,
+    "Parents": [
+      "vital_link"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "pulse_revive",
+        "Op": "Add",
+        "Value": 0.2
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "overflowing_grace",
+    "CardId": "overflowing_grace",
+    "DisplayName": "Graça Transbordante",
+    "Description": "Cura de apoio excedente vira escudo (teto 10% da vida máx. do aliado).",
+    "Stance": "Support",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 1,
+    "Tier": 10,
+    "Parents": [
+      "miracle"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "grace_shield_cap",
+        "Op": "Add",
+        "Value": 0.1
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "renewal",
+    "CardId": "renewal",
+    "DisplayName": "Renovação",
+    "Description": "−10% recarga das curas e +10% cura.",
+    "Stance": "Support",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 1,
+    "Tier": 11,
+    "Parents": [
+      "overflowing_grace"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "heal_cooldown_reduction",
+        "Op": "Add",
+        "Value": 0.1
+      },
+      {
+        "Stat": "support_heal_power",
+        "Op": "Add",
+        "Value": 0.1
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "saint_of_the_lost",
+    "CardId": "saint_of_the_lost",
+    "DisplayName": "Santo dos Desesperados",
+    "Description": "Aliado abaixo de 50%: sua regeneração passa para ele ×4; curas de apoio ×1,3.",
+    "Stance": "Support",
+    "Rarity": "Epic",
+    "Weight": 1,
+    "MaxStacks": 1,
+    "Branch": 1,
+    "Tier": 12,
+    "Parents": [
+      "renewal",
+      "iron_vow"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "saint_regen",
+        "Op": "Add",
+        "Value": 4
+      },
+      {
+        "Stat": "support_heal_mult",
+        "Op": "Mult",
+        "Value": 1.3
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "guardian_bond",
+    "CardId": "guardian_bond",
+    "DisplayName": "Vínculo do Guardião",
+    "Description": "+8 de armadura e +2 de vida por segundo.",
+    "Stance": "Support",
+    "Rarity": "Common",
+    "Weight": 8,
+    "MaxStacks": 3,
+    "Branch": 2,
+    "Tier": 1,
+    "Parents": [],
+    "Modifiers": [
+      {
+        "Stat": "armor",
+        "Op": "Add",
+        "Value": 8
+      },
+      {
+        "Stat": "health_regen",
+        "Op": "Add",
+        "Value": 2
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "shared_bastion",
+    "CardId": "shared_bastion",
+    "DisplayName": "Bastião Compartilhado",
+    "Description": "Habilidade: escudo de 160 em área para todo o esquadrão.",
+    "Stance": "Support",
+    "Rarity": "Rare",
+    "Weight": 6,
+    "MaxStacks": 1,
+    "Branch": 2,
+    "Tier": 2,
+    "Parents": [
+      "guardian_bond"
+    ],
+    "Modifiers": [],
+    "GrantedAbilityId": "shared_bastion",
+    "Icon": ""
+  },
+  {
+    "Name": "bulwark_oath",
+    "CardId": "bulwark_oath",
+    "DisplayName": "Juramento do Baluarte",
+    "Description": "Escudos em área ×1,15.",
+    "Stance": "Support",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 4,
+    "Branch": 2,
+    "Tier": 3,
+    "Parents": [
+      "shared_bastion"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "support_shield_power",
+        "Op": "Mult",
+        "Value": 1.15
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "interpose",
+    "CardId": "interpose",
+    "DisplayName": "Interpor",
+    "Description": "15% do dano de aliados a até 4 m vem para você, com −50%.",
+    "Stance": "Support",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 2,
+    "Tier": 4,
+    "Parents": [
+      "bulwark_oath",
+      "drill_sergeant"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "interpose",
+        "Op": "Add",
+        "Value": 0.15
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "stone_skin",
+    "CardId": "stone_skin",
+    "DisplayName": "Pele de Pedra",
+    "Description": "Bastião também dá +15 de armadura por 6 s.",
+    "Stance": "Support",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 3,
+    "Branch": 2,
+    "Tier": 5,
+    "Parents": [
+      "interpose"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "bastion_armor",
+        "Op": "Add",
+        "Value": 15
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "ward_totem",
+    "CardId": "ward_totem",
+    "DisplayName": "Totem Guardião",
+    "Description": "Habilidade: totem por 12 s, raio 4 m: aliados −20% dano recebido; inimigos preferem atacá-lo. Recarga 26 s.",
+    "Stance": "Support",
+    "Rarity": "Epic",
+    "Weight": 2,
+    "MaxStacks": 1,
+    "Branch": 2,
+    "Tier": 6,
+    "Parents": [
+      "stone_skin"
+    ],
+    "Modifiers": [],
+    "GrantedAbilityId": "ward_totem",
+    "Icon": ""
+  },
+  {
+    "Name": "resilient_squad",
+    "CardId": "resilient_squad",
+    "DisplayName": "Esquadrão Resiliente",
+    "Description": "Aliados no raio: +8% resistência a controle.",
+    "Stance": "Support",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 4,
+    "Branch": 2,
+    "Tier": 7,
+    "Parents": [
+      "ward_totem"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "aura_cc_resist",
+        "Op": "Add",
+        "Value": 0.08
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "sentinel",
+    "CardId": "sentinel",
+    "DisplayName": "Sentinela",
+    "Description": "Totem e Bastião também curam 2% da vida máx./s.",
+    "Stance": "Support",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 2,
+    "Tier": 8,
+    "Parents": [
+      "resilient_squad",
+      "purify"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "sentinel_regen",
+        "Op": "Add",
+        "Value": 0.02
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "aegis_of_many",
+    "CardId": "aegis_of_many",
+    "DisplayName": "Égide de Muitos",
+    "Description": "Escudos de apoio: −1% dano por aliado no raio (máx. 4) e +3 s de duração.",
+    "Stance": "Support",
+    "Rarity": "Epic",
+    "Weight": 2,
+    "MaxStacks": 1,
+    "Branch": 2,
+    "Tier": 9,
+    "Parents": [
+      "sentinel"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "aegis_of_many",
+        "Op": "Add",
+        "Value": 1
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "rebound",
+    "CardId": "rebound",
+    "DisplayName": "Ricochete",
+    "Description": "Escudo de apoio que quebra devolve 30% a quem o deu.",
+    "Stance": "Support",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 2,
+    "Tier": 10,
+    "Parents": [
+      "aegis_of_many"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "shield_rebound",
+        "Op": "Add",
+        "Value": 0.3
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "iron_vow",
+    "CardId": "iron_vow",
+    "DisplayName": "Voto de Ferro",
+    "Description": "Escudos de apoio ×1,15 e raio ×1,1.",
+    "Stance": "Support",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 2,
+    "Tier": 11,
+    "Parents": [
+      "rebound"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "support_shield_power",
+        "Op": "Mult",
+        "Value": 1.15
+      },
+      {
+        "Stat": "support_radius",
+        "Op": "Mult",
+        "Value": 1.1
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "wall_of_the_lost",
+    "CardId": "wall_of_the_lost",
+    "DisplayName": "Muralha dos Perdidos",
+    "Description": "1× a cada 60 s: aliado no raio que levaria golpe fatal fica 2 s invulnerável e você ganha escudo de 20%.",
+    "Stance": "Support",
+    "Rarity": "Epic",
+    "Weight": 1,
+    "MaxStacks": 1,
+    "Branch": 2,
+    "Tier": 12,
+    "Parents": [
+      "iron_vow",
+      "strategist"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "wall_of_the_lost",
+        "Op": "Add",
+        "Value": 1
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "tactical_recharge",
+    "CardId": "tactical_recharge",
+    "DisplayName": "Recarga Tática",
+    "Description": "−8% de recarga das habilidades de apoio.",
+    "Stance": "Support",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 4,
+    "Branch": 3,
+    "Tier": 1,
+    "Parents": [],
+    "Modifiers": [
+      {
+        "Stat": "support_cooldown_reduction",
+        "Op": "Add",
+        "Value": 0.08
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "battle_cry",
+    "CardId": "battle_cry",
+    "DisplayName": "Grito de Batalha",
+    "Description": "Habilidade: +25% de velocidade de ataque para aliados próximos por 6 s.",
+    "Stance": "Support",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 1,
+    "Branch": 3,
+    "Tier": 2,
+    "Parents": [
+      "tactical_recharge"
+    ],
+    "Modifiers": [],
+    "GrantedAbilityId": "battle_cry",
+    "Icon": ""
+  },
+  {
+    "Name": "drill_sergeant",
+    "CardId": "drill_sergeant",
+    "DisplayName": "Sargento",
+    "Description": "Aura: aliados próximos +5% vel. de ataque.",
+    "Stance": "Support",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 4,
+    "Branch": 3,
+    "Tier": 3,
+    "Parents": [
+      "battle_cry"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "aura_attack_speed",
+        "Op": "Add",
+        "Value": 0.05
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "coordinated_strike",
+    "CardId": "coordinated_strike",
+    "DisplayName": "Golpe Coordenado",
+    "Description": "Inimigo atingido por 2+ aliados em 2 s recebe +10% dano.",
+    "Stance": "Support",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 3,
+    "Tier": 4,
+    "Parents": [
+      "drill_sergeant",
+      "bulwark_oath"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "coordinated_vuln",
+        "Op": "Add",
+        "Value": 0.1
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "field_tactics",
+    "CardId": "field_tactics",
+    "DisplayName": "Táticas de Campo",
+    "Description": "−6% recarga de apoio e +6% movimento.",
+    "Stance": "Support",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 3,
+    "Branch": 3,
+    "Tier": 5,
+    "Parents": [
+      "coordinated_strike"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "support_cooldown_reduction",
+        "Op": "Add",
+        "Value": 0.06
+      },
+      {
+        "Stat": "move_speed",
+        "Op": "Mult",
+        "Value": 1.06
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "tactical_call",
+    "CardId": "tactical_call",
+    "DisplayName": "Chamado Tático",
+    "Description": "Habilidade: reinicia a esquiva dos aliados no raio e dá +30% movimento por 4 s. Recarga 20 s.",
+    "Stance": "Support",
+    "Rarity": "Epic",
+    "Weight": 2,
+    "MaxStacks": 1,
+    "Branch": 3,
+    "Tier": 6,
+    "Parents": [
+      "field_tactics"
+    ],
+    "Modifiers": [],
+    "GrantedAbilityId": "tactical_call",
+    "Icon": ""
+  },
+  {
+    "Name": "logistics",
+    "CardId": "logistics",
+    "DisplayName": "Logística",
+    "Description": "Consumíveis do Cinto também afetam 1 aliado próximo com 50% do efeito; +5% duração de apoio.",
+    "Stance": "Support",
+    "Rarity": "Common",
+    "Weight": 10,
+    "MaxStacks": 4,
+    "Branch": 3,
+    "Tier": 7,
+    "Parents": [
+      "tactical_call"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "belt_share",
+        "Op": "Add",
+        "Value": 0.5
+      },
+      {
+        "Stat": "support_duration_mult",
+        "Op": "Mult",
+        "Value": 1.05
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "flanking_orders",
+    "CardId": "flanking_orders",
+    "DisplayName": "Ordens de Flanco",
+    "Description": "Aliados +10% chance crítica contra inimigos que focam outro jogador.",
+    "Stance": "Support",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 3,
+    "Tier": 8,
+    "Parents": [
+      "logistics",
+      "war_banner"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "aura_flank_crit",
+        "Op": "Add",
+        "Value": 0.1
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "momentum_doctrine",
+    "CardId": "momentum_doctrine",
+    "DisplayName": "Doutrina do Ímpeto",
+    "Description": "Cada habilidade de apoio usada reduz as outras em 1,5 s.",
+    "Stance": "Support",
+    "Rarity": "Epic",
+    "Weight": 2,
+    "MaxStacks": 1,
+    "Branch": 3,
+    "Tier": 9,
+    "Parents": [
+      "flanking_orders"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "momentum_doctrine",
+        "Op": "Add",
+        "Value": 1.5
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "quartermaster",
+    "CardId": "quartermaster",
+    "DisplayName": "Intendente",
+    "Description": "Fim de onda: 20% de chance de reiniciar suas recargas de apoio (e de devolver 1 consumível do Cinto).",
+    "Stance": "Support",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 3,
+    "Tier": 10,
+    "Parents": [
+      "momentum_doctrine"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "quartermaster",
+        "Op": "Add",
+        "Value": 0.2
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "strategist",
+    "CardId": "strategist",
+    "DisplayName": "Estrategista",
+    "Description": "−8% recarga de apoio e +10% duração de apoio.",
+    "Stance": "Support",
+    "Rarity": "Rare",
+    "Weight": 5,
+    "MaxStacks": 3,
+    "Branch": 3,
+    "Tier": 11,
+    "Parents": [
+      "quartermaster"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "support_cooldown_reduction",
+        "Op": "Add",
+        "Value": 0.08
+      },
+      {
+        "Stat": "support_duration_mult",
+        "Op": "Mult",
+        "Value": 1.1
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  },
+  {
+    "Name": "grand_tactician",
+    "CardId": "grand_tactician",
+    "DisplayName": "Grande Tático",
+    "Description": "Habilidades de apoio com 2 cargas; teto de redução de recarga de apoio 50% → 65%.",
+    "Stance": "Support",
+    "Rarity": "Epic",
+    "Weight": 1,
+    "MaxStacks": 1,
+    "Branch": 3,
+    "Tier": 12,
+    "Parents": [
+      "strategist",
+      "marshal"
+    ],
+    "Modifiers": [
+      {
+        "Stat": "support_charges",
+        "Op": "Add",
+        "Value": 1
+      },
+      {
+        "Stat": "support_cdr_cap_bonus",
+        "Op": "Add",
+        "Value": 0.15
+      }
+    ],
+    "GrantedAbilityId": "None",
+    "Icon": ""
+  }
+]
