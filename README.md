@@ -11,6 +11,8 @@ Primeiro lançamento: o modo **Dungeon Stance**. Se tiver aceitação da comunid
 
 | Documento | Conteúdo |
 | --- | --- |
+| [CHECKLIST_FASES.md](CHECKLIST_FASES.md) | Checklist de fases de implementação |
+| [PENDENCIAS.md](PENDENCIAS.md) | O que falta em cada área (Core, Gameplay, Network, UI) e decisões em aberto |
 | [GUIA_EQUIPE.md](GUIA_EQUIPE.md) | Como o grupo usa Git, GitHub e Git LFS (o que sobe, travas de arquivos, rotina) |
 | [PLANO_DUNGEON_STANCE_UE5.md](docs/PLANO_DUNGEON_STANCE_UE5.md) | Plano de execução, decisões técnicas e roteiro até o MMORPG |
 | [ESPEC_REGRAS_DUNGEON_STANCE.md](docs/ESPEC_REGRAS_DUNGEON_STANCE.md) | Regras e fórmulas extraídas do protótipo, já convertidas para unidades da UE5 |
