@@ -1,38 +1,65 @@
-# 3ds Max — Exportação Final de Assets
+# 3ds Max — Guia de Exportação Final de Assets (UE5)
 
-Esta pasta guarda **apenas** assets prontos e validados vindos do 3ds Max, para importação direta na Unreal Engine 5.
-Concepts e arquivos de trabalho (`.max`, rascunhos) ficam em `/arts` — **não** mover nada de lá para cá sem estar validado.
+Esta pasta guarda **exclusivamente** os arquivos `.FBX`, malhas e texturas validados e prontos para importação direta na **Unreal Engine 5**.
+Arquivos brutos de modelagem (`.max`, `.blend`, `.skp`, concepts) devem permanecer em `/arts` — **não** mova arquivos de rascunho para cá.
 
-## Subpastas
+---
 
-| Pasta | Conteúdo |
-| --- | --- |
-| `Characters/` | Heróis das 9 classes, monstros e chefes (Skeletal Meshes + animações) |
-| `Environments/` | Módulos de dungeon/arena: pisos, paredes, rampas, platôs |
-| `Items/` | Armas, armaduras, consumíveis do Cinto de Batalha, drops |
-| `Props/` | Estações de craft, baús, totens, estandartes, decoração |
+## 📂 Mapa de Pastas: Aonde vai cada Export FBX
 
-## Requisitos de exportação
+Para manter o projeto organizado e compatível com a Unreal Engine 5, cada tipo de modelo exportado deve ser salvo em sua subpasta correspondente:
 
-- **Unidades:** 1 unidade do 3ds Max = 1 centímetro (padrão Unreal). No export FBX, deixar *Automatic* desligado e *Scene units converted to: Centimeters*.
-- **Eixos:** Z para cima (Z-Up). Frente do personagem olhando para **+X** na Unreal (no Max: frente para −Y antes de exportar, conferir com um teste de import).
-- **Pivot / origem:**
-  - Personagens: na base dos pés (centro X/Y, Z = chão), no ponto (0,0,0) da cena.
-  - Items/Props: no centro geométrico ou no ponto lógico de pega/encaixe (empunhadura da arma, base do prop).
-- **Formato:** `.fbx` (FBX 2020 ou superior), malha limpa, sem vértices duplicados, transformações resetadas (*Reset XForm* antes de exportar).
-- **UVs:** canal 1 = textura; canal 2 = lightmap (só para Static Meshes de cenário que usem luz estática).
-- **Escala de referência do jogo:** herói ≈ 180 cm de altura. O protótipo legado usava 40 px = 1 m (1 px = 2,5 cm); alcances e raios da especificação de regras já estão convertidos para cm.
+### 1. `Characters/` (Personagens, Monstros e Animações)
+| Subpasta | O que exportar aqui | Exemplo de Nome FBX |
+| :--- | :--- | :--- |
+| `Characters/Heroes/` | Malhas com rig dos heróis (Skeletal Mesh) e variações | `SK_Hero_Male.fbx`, `SK_Hero_Female.fbx` |
+| `Characters/Monsters/` | Mobs comuns das dungeons com rig e animações | `SK_Goblin_Grunt.fbx`, `SK_Bat_Cave.fbx` |
+| `Characters/Bosses/` | Chefes de bioma e do Ato I com rig | `SK_Boss_GoblinKing.fbx`, `SK_Boss_Arcodragon.fbx` |
+| `Characters/<Nome>/Animations/` | Clipes de animação puros (sem malha ou com rig) | `A_Hero_Run.fbx`, `A_Hero_Slash_01.fbx` |
 
-## Nomenclatura (prefixo obrigatório)
+---
 
-| Prefixo | Tipo | Exemplo |
-| --- | --- | --- |
-| `SK_` | Skeletal Mesh | `SK_Barbaro.fbx` |
-| `SM_` | Static Mesh | `SM_Bigorna_Reforcada.fbx` |
-| `A_` | Animação (FBX só com a animação) | `A_Barbaro_Redemoinho.fbx` |
-| `MAT_` | Material | `MAT_Pedra_Dungeon` |
-| `TEX_` | Textura (+ sufixo `_D` cor, `_N` normal, `_ORM` oclusão/rugosidade/metal) | `TEX_Barbaro_D.png` |
+### 2. `Environments/` (Kits Modulares de Terreno e Cenários)
+| Subpasta | O que exportar aqui | Exemplo de Nome FBX |
+| :--- | :--- | :--- |
+| `Environments/Hub_Cidadela/` | Terrenos diamantados, praça central, pontes flutuantes | `SM_Hub_Island_Base_Diamond_01.fbx`, `SM_Hub_Great_Portal_Arch_01.fbx` |
+| `Environments/Dungeon_01_Floresta/` | Pisos de terra, barrancos, rochas, pontes de madeira | `SM_Forest_Floor_Dirt_01.fbx`, `SM_Forest_Cliff_Wall_01.fbx` |
+| `Environments/Dungeon_02_Gruta/` | Paredes de calcário, leito de rio, estalactites, arcos | `SM_Cave_Floor_WetRock_01.fbx`, `SM_Cave_Stalactite_Cluster_01.fbx` |
+| `Environments/Dungeon_03_Cidadela/` | Lajes imperiais, colunas de mármore, arcos de pedra | `SM_Citadel_Floor_Tile_01.fbx`, `SM_Citadel_Pillar_Intact_01.fbx` |
+| `Environments/Dungeon_04_Pantano/` | Lodo, mangues, passarelas de tábuas podres, charcos | `SM_Swamp_Floor_Mud_01.fbx`, `SM_Swamp_Tree_Mangrove_Large_01.fbx` |
+| `Environments/Dungeon_05_Cupula/` | Mármore branco celestial, ilhas de topo, arcos de ouro | `SM_Sky_Floor_WhiteMarble_01.fbx`, `SM_Sky_Pillar_Celestial_01.fbx` |
 
-## Animação
+---
 
-O fluxo de animação (vídeo IA → 3ds Max → UE5) está em [`video_para_animacao.md`](../docs/video_para_animacao.md). Animações limpas no Max são exportadas para `Characters/<Personagem>/Animations/` com o prefixo `A_`, usando o mesmo esqueleto do `SK_` correspondente.
+### 3. `Items/` (Equipamentos, Armas e Coletáveis)
+| Subpasta | O que exportar aqui | Exemplo de Nome FBX |
+| :--- | :--- | :--- |
+| `Items/Weapons/` | Espadas, adagas, maças, machados, lanças, bestas | `SM_Weapon_Sword_Bronze_01.fbx`, `SM_Weapon_Mace_Iron_01.fbx` |
+| `Items/Armors/` | Peças modulares de armadura (elmos, peitorais, botas) | `SM_Armor_Chest_Bronze_01.fbx`, `SM_Armor_Helmet_Iron_01.fbx` |
+| `Items/Resources/` | Minérios dropados no chão, barras fundidas, ervas | `SM_Ore_Drop_Copper_01.fbx`, `SM_Bar_Ingot_Bronze_01.fbx` |
+
+---
+
+### 4. `Props/` (Objetos Interativos, Estações e Decoração)
+| Subpasta | O que exportar aqui | Exemplo de Nome FBX |
+| :--- | :--- | :--- |
+| `Props/Interactive/` | Baús, alavancas, portões levadiços, armadilhas, altares | `SM_Forest_Chest_Wooden_01.fbx`, `SM_Citadel_Pressure_Plate_01.fbx` |
+| `Props/Crafting/` | Bigornas, fornalhas, mesas de alquimia e marcenaria | `SM_Forge_Stone_Furnace_01.fbx`, `SM_Anvil_Reinforced_01.fbx` |
+| `Props/Decoration/` | Caixotes, tochas, estandartes, estátuas, móveis | `SM_Citadel_Statue_Emperor_01.fbx`, `SM_Hub_Mailbox_Post_01.fbx` |
+
+---
+
+## ⚙️ Regras Técnicas Obrigatórias de Exportação do 3ds Max
+
+1. **Unidades do Sistema:**
+   * 1 Unidade = 1 Centímetro (padrão nativo da Unreal Engine).
+   * Na janela de exportação FBX do 3ds Max: desligue *Automatic* e fixe *Scene units converted to: Centimeters*.
+2. **Eixos:**
+   * **Z para cima (Z-Up)**. Frente do personagem ou objeto olhando para **+X** na Unreal (no 3ds Max isso equivale à frente virada para −Y antes da exportação).
+3. **Pivô / Ponto de Origem:**
+   * **Personagens:** O pivô central deve estar **entre os pés no chão (Z = 0)** exatamente na origem `(0, 0, 0)`.
+   * **Armas:** O pivô deve estar **na empunhadura** (onde a mão do herói segura).
+   * **Módulos de Parede/Piso:** O pivô deve estar em um dos cantos inferiores ou na base centralizada para encaixar no grid modular da UE5 (grid de 100cm / 1m).
+4. **Limpeza da Malha:**
+   * Aplicar **Reset XForm** antes de exportar para zerar rotações e escalas indesejadas (`100%`).
+   * Converter sempre para *Editable Poly*.
