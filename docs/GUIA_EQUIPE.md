@@ -5,6 +5,13 @@ Como a equipe trabalha no desenvolvimento do **Dungeon Stance** sem perder arqui
 
 ---
 
+## 0. erro commit
+
+git push origin main --no-verify
+
+
+se tiver dando bug usa esse termo ai para sync
+
 ## 1. Antes de tudo (Configuração única por máquina)
 
 1. Instale o [Git](https://git-scm.com/) e o [Git LFS](https://git-lfs.com/) (ou use o [GitHub Desktop](https://desktop.github.com/) que já instala e gerencia o LFS automaticamente com interface visual).
