@@ -50,17 +50,41 @@ Plugins/**/Intermediate/
 Content/Developers/
 
 # ---------------------------------------------------------------------------
-# 3ds Max / arte — arquivos temporários, backups e autosaves
+# 3ds Max / Arte / 3D — Arquivos brutos e binários pesados (NÃO sobem para o Git)
 # ---------------------------------------------------------------------------
-# Concepts e trabalho em andamento: grande demais para o repositório
-arts/
+*.max
+*.fbx
+*.obj
+*.blend
+*.blend1
+*.cdr
+*.psd
+*.psb
+*.tga
+*.exr
+*.hdr
+*.tif
+*.tiff
+*.spp
+*.sbsar
+*.skb
 *_autoback*.max
 *.max.bak
-*.skb
-*.blend1
 *.tmp
 Thumbs.db
 desktop.ini
+
+# Pasta arts/: ignora todos os arquivos, EXCETO pastas, .md (listas e backlogs) e .gitkeep
+arts/**
+!arts/**/
+!arts/**/*.md
+!arts/**/.gitkeep
+
+# Pasta _Export_3dsMax_Final/: ignora modelos brutos exportados, mantém .md e pastas
+_Export_3dsMax_Final/**
+!_Export_3dsMax_Final/**/
+!_Export_3dsMax_Final/**/*.md
+!_Export_3dsMax_Final/**/.gitkeep
 
 # ---------------------------------------------------------------------------
 # Protótipo legado

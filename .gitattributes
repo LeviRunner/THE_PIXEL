@@ -27,8 +27,6 @@
 *.psd filter=lfs diff=lfs merge=lfs -text lockable
 
 # Malhas e animações exportadas
-*.fbx filter=lfs diff=lfs merge=lfs -text
-*.obj filter=lfs diff=lfs merge=lfs -text
 *.glb filter=lfs diff=lfs merge=lfs -text
 *.gltf filter=lfs diff=lfs merge=lfs -text
 *.abc filter=lfs diff=lfs merge=lfs -text
