@@ -26,22 +26,22 @@ flowchart TD
 ### Passo 0.1: Exportação Limpa do 3ds Max
 - [X] Pegar o arquivo `base_male.max` (concluído com 4.530 polys).
 - [X] Criar um esqueleto básico (Biped padrão ou Bones simples: Root, Pelvis, Spine, Chest, Neck, Head, Clavicle L/R, Arm L/R, Forearm L/R, Hand L/R, Thigh L/R, Calf L/R, Foot L/R).
-- [ ] Criar dois **Sockets / Dummy Bones**:
+- [X] Criar dois **Sockets / Dummy Bones**:
   - `Socket_Weapon_R` (na palma da mão direita para prender espadas/picaretas).
   - `Socket_Weapon_L` (no antebraço esquerdo para escudos/tochas).
-- [ ] Aplicar o modificador `Skin` no 3ds Max (ou rigging automático rápido).
-- [ ] Exportar para `_Export_3dsMax_Final/Characters/SK_Hero_Male.fbx` (com smoothing groups ativos e escala em Centímetros / 1.0).
+- [X] Aplicar o modificador `Skin` no 3ds Max (ou rigging automático rápido).
+- [X] Exportar para `_Export_3dsMax_Final/Characters/SK_Hero_Male.fbx` (com smoothing groups ativos e escala em Centímetros / 1.0).
 
 ### Passo 0.2: As 3 Animações Essenciais
-- [ ] **Idle (Parado respirando):** 30 a 60 frames em loop.
-- [ ] **Run (Corrida com energia):** 24 a 30 frames em loop.
-- [ ] **Jump / Dodge (Salto ou Rolamento):** 20 frames.
+- [X] **Idle (Parado respirando):** 30 a 60 frames em loop.
+- [X] **Run (Corrida com energia):** 24 a 30 frames em loop.
+- [X] **Jump / Dodge (Salto ou Rolamento):** 20 frames.
 *(Dica: Se não quiser animar à mão agora, use o Mixamo ou o pipeline de IA descrito em `video_para_animacao.md` para puxar os 3 clipes em 10 minutos).*
 
 ### Passo 0.3: Teste Jogável 0 (Playable Test 0)
-- [ ] Colocar o personagem num chão plano com iluminação.
-- [ ] Controlar no teclado (WASD) ou controle analógico.
-- [ ] Testar a câmera isométrica (fixa em 45º ou livre).
+- [X] Colocar o personagem num chão plano com iluminação.
+- [X] Controlar no teclado (WASD) ou controle analógico.
+- [X] Testar a câmera isométrica (fixa em 45º ou livre).
 - **Critério de Aprovação:** Você consegue correr, parar e pular sentindo o peso do seu próprio modelo 3D.
 
 ---
@@ -50,11 +50,11 @@ flowchart TD
 > **Meta Deste Módulo:** Pegar a Espada e o Escudo de Bronze (que já desenhamos no concept) e anexá-los ao corpo do boneco, executando animação de ataque.
 
 ### Passo 1.1: Modelar Apenas 2 Assets no 3ds Max
-- [ ] **Espada de Bronze (Sword):** modelo simples, pivô centralizado na empunhadura. Exportar `SM_Weapon_Sword_Bronze.fbx`.
+- [X] **Espada de Bronze (Sword):** modelo simples, pivô centralizado na empunhadura. Exportar `SM_Weapon_Sword_Bronze.fbx`.
 - [ ] **Escudo de Bronze (Shield):** modelo simples, pivô na alça interna. Exportar `SM_Shield_Bronze.fbx`.
 
 ### Passo 1.2: O Sistema Modular "Paperdoll"
-- [ ] Configurar os Sockets da mão:
+- [X] Configurar os Sockets da mão:
   - Anexar a espada no socket `Socket_Weapon_R`.
   - Anexar o escudo no socket `Socket_Weapon_L`.
 - [ ] Adicionar comando de Ataque Básico (Botão Esquerdo do Mouse / Botão X do controle).
