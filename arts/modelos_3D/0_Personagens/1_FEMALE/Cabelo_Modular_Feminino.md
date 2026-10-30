@@ -1,6 +1,20 @@
 # Guia Técnico e Checklist Passo a Passo: Cabelo Modular (`Hero_Chibi_Female`)
 
 > **Objetivo:** Guia prático com **checklists em tabelas (linhas e colunas)** para você ir marcando `[x]` em cada etapa da criação dos cabelos modulares femininos (3 slots combináveis, ajuste de Tamanho, Cor via Máscara RGB e Rigging/Física).
+> **Blueprints de Modelagem (1 Lado + Simetria + Crescimento):**
+> - [`Blueprint_Hair_Female_01_Half_Symmetry.jpg`](./Blueprint_Hair_Female_01_Half_Symmetry.jpg) — Vista Frontal e Perfil Esquerdo (Eixo `X=0` + 5 Partes Coloridas Simplificadas)
+> - [`Blueprint_Hair_Female_02_Parts_Growth.jpg`](./Blueprint_Hair_Female_02_Parts_Growth.jpg) — Peças de 1 Lado na Mesma Proporção (Meia-Calota + Cortes em Vermelho + Crescimento Bob Curto $\rightarrow$ Ombro $\rightarrow$ Cintura)
+
+---
+
+## 0. Método de Modelagem Simplificado de 1 Lado (Estilo Vídeo Anime `@kensyouen_Y`)
+1. **Meia-Calota com Topo Soldado (`Part 1 - Verde`):** Crie meia calota low-poly com 5 colunas verticais de quads. Mantenha os vértices do topo (`Crown`) soldados e faça o `Split` nas arestas verticais (**linhas vermelhas**) da linha da testa para baixo.
+2. **4 Peças Simplificadas de 1 Lado na Mesma Proporção (`Step 2`):**
+   - **`[Front_L]` Meia Franja (Azul Ciano):** 4 tiras verticais de quads com leve curva interna na ponta.
+   - **`[Side_L]` Mecha Lateral com Cacho (Coral):** 2 tiras mais largas emoldurando a bochecha com curva em "S"/cacho na ponta.
+   - **`[Back_L]` Meia Folha Traseira de Crescimento (Roxo Lavanda):** 4 tiras largas com **6 a 8 loops horizontais regulares** (base para crescer do *Short Bob* até a cintura).
+   - **`[Top_L]` Mecha de Topo / Ahoge (Amarelo):** 1 tira curva saindo do topo (sem simetria ou levemente rotacionada) para quebrar 100% a simetria visual.
+3. **Espessura e Suavização no 3ds Max:** Aplique `Shell` (fino, apenas nas bordas ou face interna oculta) + `Chamfer/TurboSmooth` leve antes de criar os *Morph Targets* de comprimento.
 
 ---
 
@@ -26,7 +40,7 @@
 
 | Sub-Peça Modular | Arquivo `.uvw` | 1. Malha | 2. UVMap | 3. Textura Mask | 4. Rig (Osso/Morph) | 5. Animações | 6. Efeitos (Shader/Física) |
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Cabelo Base 01 (Longo Padrão)** | `Hair_01_F.uvw` | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
+| **Cabelo Base 01 (Longo Padrão)** | `Hair_01_F.uvw` | [x] | [x] | [x] | [x] | [ ] | [ ] |
 | **Franja Modular 01 (Front Hair)** | `Hair_Front_01_F.uvw` | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
 | **Extensão Traseira 01 (Back Hair)** | `Hair_Back_01_F.uvw` | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
 | **Hair Cap 01 (Versão Elmo/Capuz)** | `Hair_Cap_01_F.uvw` | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |

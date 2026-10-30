@@ -1,6 +1,19 @@
 # Guia Técnico e Checklist Passo a Passo: Cabelo Modular (`Hero_Chibi_Male`)
 
 > **Objetivo:** Guia prático com **checklists em tabelas (linhas e colunas)** para você ir marcando `[x]` em cada etapa da criação dos cabelos modulares masculinos (ajuste de Tamanho, Cor via Máscara RGB e Rigging).
+> **Blueprints de Modelagem (1 Lado + Simetria + Crescimento):**
+> - [`Blueprint_Hair_Male_01_Half_Symmetry.jpg`](./Blueprint_Hair_Male_01_Half_Symmetry.jpg) — Vista Frontal e Perfil Esquerdo (Eixo `X=0` + 4 Partes Coloridas Simplificadas)
+> - [`Blueprint_Hair_Male_02_Parts_Growth.jpg`](./Blueprint_Hair_Male_02_Parts_Growth.jpg) — Peças de 1 Lado na Mesma Proporção (Corte em Costuras Vermelhas + Crescimento Curto $\rightarrow$ Médio $\rightarrow$ Longo)
+
+---
+
+## 0. Método de Modelagem Simplificado de 1 Lado (Estilo Vídeo Anime Quad-Strip)
+1. **Meia-Calota Base (`Step 1`):** Comece com metade de uma esfera/calota low-poly sobre o lado esquerdo da cabeça (`Head_M`), mantendo o topo (`Apex`) soldado no centro (`X=0`).
+2. **Cortes Verticais (`Red Split Seams`):** Selecione as arestas verticais da metade da altura para baixo e aplique **Split / Break** (ou *Chamfer* fino sem faces internas) para separar em **3 tiras principais de 1 lado**:
+   - **`[A] Front Bangs Strip` (Azul Claro):** 3 colunas de quads formando metade da franja.
+   - **`[B] Side Temple Strip` (Laranja Coral):** 2 colunas de quads na frente da orelha (costeleta/lateral).
+   - **`[C] Back Nape Strip` (Roxo Suave):** 4 colunas de quads na nuca com **loops horizontais uniformes** para permitir esticar o comprimento.
+3. **Simetria + Quebra de Simetria Visual:** Aplique o modificador **`Symmetry`** no eixo `X=0`. Na UE5, a física independente dos ossos (`hair_l` / `hair_r` / `hair_back`) durante o movimento + 1 mecha central levemente deslocada no *Edit Poly* acima do *Symmetry* eliminam 100% qualquer aparência artificial de espelhamento.
 
 ---
 
@@ -26,7 +39,7 @@
 
 | Sub-Peça Modular | Arquivo `.uvw` | 1. Malha | 2. UVMap | 3. Textura Mask | 4. Rig (Osso/Morph) | 5. Animações | 6. Efeitos (Shader) |
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Cabelo Base 01 (Topo/Nuca)** | `Hair_01_M.uvw` | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
+| **Cabelo Base 01 (Topo/Nuca)** | `Hair_01_M.uvw` | [x] | [x] | [x] | [x] | [ ] | [ ] |
 | **Franja Modular 01 (Testa)** | `Hair_Front_01_M.uvw` | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
 | **Hair Cap 01 (Versão Elmo/Capuz)**| `Hair_Cap_01_M.uvw` | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
 | **Cabelo Estilo 02 (Partido)** | `Hair_02_M.uvw` | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
